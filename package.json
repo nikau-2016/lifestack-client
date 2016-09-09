@@ -1,0 +1,70 @@
+{
+  "name": "lifestack-client",
+  "version": "0.1.0",
+  "description": "No skill too stupid.",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --watch",
+    "devserver": "webpack-dev-server --hot --inline",
+    "server": "nodemon ./src/server/index.js",
+    "start": "node ./src/server/index.js",
+    "test": "tape './tests/**/*.test.js' -r babel-register | tap-spec",
+    "postinstall": "webpack -p"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikau-2016/lifestack-client.git"
+  },
+  "keywords": [
+    "skills",
+    "Adulting"
+  ],
+  "author": "Nikau 2016",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/nikau-2016/lifestack-client/issues"
+  },
+  "homepage": "https://github.com/nikau-2016/lifestack-client#readme",
+  "devDependencies": {
+    "babel-register": "^6.14.0",
+    "enzyme": "^2.4.1",
+    "eslint": "^3.4.0",
+    "eslint-config-standard": "^6.0.0",
+    "eslint-plugin-promise": "^2.0.1",
+    "eslint-plugin-react": "^6.2.0",
+    "eslint-plugin-standard": "^2.0.0",
+    "jsdom": "^9.5.0",
+    "nock": "^8.0.0",
+    "nodemon": "^1.10.2",
+    "react-addons-test-utils": "^15.3.1",
+    "redux-mock-store": "^1.1.4",
+    "sinon": "^1.17.5",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.6.0",
+    "webpack-dev-server": "^1.15.1"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
+    ]
+  },
+  "engines": {
+    "node": "6.4"
+  },
+  "dependencies": {
+    "babel-core": "^6.14.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.11.1",
+    "express": "^4.14.0",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.7.0",
+    "redux": "^3.5.2",
+    "redux-thunk": "^2.1.0",
+    "superagent": "^2.2.0",
+    "webpack": "^1.13.2"
+  }
+}
