@@ -23050,112 +23050,11 @@
 
 	'use strict';
 	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
 	var _react = __webpack_require__(1);
 	
 	var _react2 = _interopRequireDefault(_react);
-	
-	var _SkillVideo = __webpack_require__(197);
-	
-	var _SkillVideo2 = _interopRequireDefault(_SkillVideo);
-	
-	var _UserDetail = __webpack_require__(199);
-	
-	var _UserDetail2 = _interopRequireDefault(_UserDetail);
-	
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = function () {
-	  return _react2.default.createElement(_UserDetail2.default, { id: 6, userName: 'Kerbonaut', profilePic: 'http://i.imgur.com/oPyO3CJ.png' });
-	};
-
-/***/ },
-/* 197 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = _react2.default.createClass({
-	  displayName: "SkillVideo",
-	
-	  props: {
-	    id: _react2.default.PropTypes.number.isRequired,
-	    url: _react2.default.PropTypes.string.isRequired,
-	    votes: _react2.default.PropTypes.number.isRequired,
-	    onUpvote: _react2.default.PropTypes.func.isRequired,
-	    onDownvote: _react2.default.PropTypes.func.isRequired
-	  },
-	  render: function render() {
-	    return _react2.default.createElement(
-	      "div",
-	      { className: "skill-video" },
-	      _react2.default.createElement("iframe", { src: this.props.url, allowFullScreen: true }),
-	      _react2.default.createElement(
-	        "div",
-	        null,
-	        _react2.default.createElement("img", { id: this.props.id, className: "upvote", src: "./images/up.png", onClick: this.props.onUpvote }),
-	        _react2.default.createElement("img", { id: this.props.id, className: "downvote", src: "./images/down.png", onClick: this.props.onDownvote })
-	      ),
-	      _react2.default.createElement(
-	        "p",
-	        { className: "votes" },
-	        this.props.votes
-	      )
-	    );
-	  }
-	});
-
-/***/ },
-/* 198 */,
-/* 199 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _react = __webpack_require__(1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = _react2.default.createClass({
-	  displayName: "UserDetail",
-	
-	  props: {
-	    id: _react2.default.PropTypes.number.isRequired,
-	    userName: _react2.default.PropTypes.string.isRequired,
-	    profilePic: _react2.default.PropTypes.string.isRequired
-	  },
-	  render: function render() {
-	    return _react2.default.createElement(
-	      "div",
-	      { className: "user-detail" },
-	      _react2.default.createElement(
-	        "h2",
-	        { className: "user-name" },
-	        this.props.userName
-	      ),
-	      _react2.default.createElement("img", { className: "profile-pic", src: this.props.profilePic, alt: "user face" })
-	    );
-	  }
-	});
 
 /***/ }
 /******/ ]);
