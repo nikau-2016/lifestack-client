@@ -6,15 +6,17 @@ export default React.createClass({
     skills: React.PropTypes.array.isRequired
   },
   render() {
-    const skill-list = this.props.skills.map((elem) => {
+    const skillList = this.props.skills.map((elem) => {
       return <UserSkill key={elem.id}
               skillName={elem.skillName}
               status={elem.status}
-              skillXp={skillXp} />
+              skillXp={elem.skillXp} />
     })
     return(
       <div className="skill-list">
-        {skillList}
+        <table>
+          {skillList}
+        </table>
       </div>
     )
   }

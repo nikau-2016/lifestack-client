@@ -11,7 +11,7 @@ export default React.createClass({
 
   render() {
     return(
-          <tr className="user-skill" {this.props.id}>
+          <tr className="user-skill" id={this.props.id}>
             <th>{this.props.skillName}</th>
             <td>{this.props.status}</td>
             <td>{this.props.skillXp}</td>

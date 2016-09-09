@@ -1,5 +1,11 @@
 import React from 'react'
+import SkillList from '../components/SkillList'
 
 export default () => {
-  return <p>Placeholder for ProfileContainer</p>
+  return(
+    <div>
+      <p>Placeholder for ProfileContainer</p>
+      <SkillList />
+    </div>
+  )
 }
