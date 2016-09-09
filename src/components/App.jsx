@@ -1,7 +1,7 @@
 import React from 'react'
 import SkillVideo from './SkillVideo'
-import Profile from './Profile'
+import UserDetail from './UserDetail'
 
 export default () => {
-  return <Profile id={6} userName="Kerbonaut" profilePic="http://i.imgur.com/oPyO3CJ.png" />
+  return <UserDetail id={6} userName="Kerbonaut" profilePic="http://i.imgur.com/oPyO3CJ.png" />
 }

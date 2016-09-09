@@ -8,7 +8,7 @@ export default React.createClass({
   },
   render () {
     return (
-      <div className="profile">
+      <div className="user-detail">
         <h2 className = "user-name">{this.props.userName}</h2>
         <img className = "profile-pic" src={this.props.profilePic} alt="user face" />
       </div>

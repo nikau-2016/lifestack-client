@@ -23062,14 +23062,14 @@
 	
 	var _SkillVideo2 = _interopRequireDefault(_SkillVideo);
 	
-	var _Profile = __webpack_require__(198);
+	var _UserDetail = __webpack_require__(199);
 	
-	var _Profile2 = _interopRequireDefault(_Profile);
+	var _UserDetail2 = _interopRequireDefault(_UserDetail);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	exports.default = function () {
-	  return _react2.default.createElement(_Profile2.default, { id: 6, userName: 'Kerbonaut', profilePic: 'http://i.imgur.com/oPyO3CJ.png' });
+	  return _react2.default.createElement(_UserDetail2.default, { id: 6, userName: 'Kerbonaut', profilePic: 'http://i.imgur.com/oPyO3CJ.png' });
 	};
 
 /***/ },
@@ -23119,7 +23119,8 @@
 	});
 
 /***/ },
-/* 198 */
+/* 198 */,
+/* 199 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -23135,7 +23136,7 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	exports.default = _react2.default.createClass({
-	  displayName: "Profile",
+	  displayName: "UserDetail",
 	
 	  props: {
 	    id: _react2.default.PropTypes.number.isRequired,
@@ -23145,7 +23146,7 @@
 	  render: function render() {
 	    return _react2.default.createElement(
 	      "div",
-	      { className: "profile" },
+	      { className: "user-detail" },
 	      _react2.default.createElement(
 	        "h2",
 	        { className: "user-name" },
