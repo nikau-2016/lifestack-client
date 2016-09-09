@@ -8,8 +8,7 @@
     "devserver": "webpack-dev-server --hot --inline",
     "server": "nodemon ./src/server/index.js",
     "start": "node ./src/server/index.js",
-    "test": "tape './tests/**/*.test.js' -r babel-register | tap-spec",
-    "postinstall": "webpack -p"
+    "test": "tape './tests/**/*.test.js' -r babel-register | tap-spec"
   },
   "repository": {
     "type": "git",
