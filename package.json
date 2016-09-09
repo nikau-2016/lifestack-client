@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nikau-2016/lifestack-client.git"
+    "url": "git+https://github.com/kamon-harrell/lifestack-client.git"
   },
   "keywords": [
     "skills",
@@ -22,9 +22,9 @@
   "author": "Nikau 2016",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/nikau-2016/lifestack-client/issues"
+    "url": "https://github.com/kamon-harrell/lifestack-client/issues"
   },
-  "homepage": "https://github.com/nikau-2016/lifestack-client#readme",
+  "homepage": "https://github.com/kamon-harrell/lifestack-client#readme",
   "devDependencies": {
     "babel-register": "^6.14.0",
     "enzyme": "^2.4.1",
