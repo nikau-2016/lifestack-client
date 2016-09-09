@@ -1,6 +1,7 @@
 import React from 'react'
+import TopVideos from './TopVideos'
 
 
 export default () => {
-  return <p> hello </p>
+  return <TopVideos url="https://youtube.com/embed/B3eAMGXFw1o" skillname="rihanna"/>
 }

@@ -23058,15 +23058,64 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
+	var _TopVideos = __webpack_require__(197);
+	
+	var _TopVideos2 = _interopRequireDefault(_TopVideos);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	exports.default = function () {
-	  return _react2.default.createElement(
-	    'p',
-	    null,
-	    ' hello '
-	  );
+	  return _react2.default.createElement(_TopVideos2.default, { url: 'https://youtube.com/embed/B3eAMGXFw1o', skillname: 'rihanna' });
 	};
+
+/***/ },
+/* 197 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = _react2.default.createClass({
+	    displayName: "TopVideos",
+	
+	    props: {
+	        url: _react2.default.PropTypes.string.isRequired,
+	        skillname: _react2.default.PropTypes.string.isRequired
+	    },
+	    render: function render() {
+	        return _react2.default.createElement(
+	            "div",
+	            { className: "top-videos" },
+	            _react2.default.createElement("iframe", { src: this.props.url, allowFullScreen: true }),
+	            _react2.default.createElement(
+	                "p",
+	                { className: "skill-name" },
+	                this.props.skillname
+	            ),
+	            _react2.default.createElement("iframe", { src: this.props.url, allowFullScreen: true }),
+	            _react2.default.createElement(
+	                "p",
+	                { className: "skill-name" },
+	                this.props.skillname
+	            ),
+	            _react2.default.createElement("iframe", { src: this.props.url, allowFullScreen: true }),
+	            _react2.default.createElement(
+	                "p",
+	                { className: "skill-name" },
+	                this.props.skillname
+	            )
+	        );
+	    }
+	});
 
 /***/ }
 /******/ ]);
