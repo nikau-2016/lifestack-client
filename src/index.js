@@ -6,7 +6,7 @@ import {Router, Route, hashHistory} from 'react-router'
 
 import reducers from './reducers'
 import Header from './components/Header'
-import HomeContainer from './containers/HomeContainer'
+import Home from './components/Home'
 import SearchContainer from './containers/SearchContainer'
 import ProfileContainer from './containers/ProfileContainer'
 
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <Provider store={store}>
       <Router history={hashHistory}>
         <Route component={Header}>
-          <Route path='/' component={HomeContainer} />
+          <Route path='/' component={Home} />
           <Route path='/search' component={SearchContainer} />
           <Route path='/profile' component={ProfileContainer} />
         </Route>
