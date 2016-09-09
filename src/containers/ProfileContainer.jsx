@@ -1,6 +1,5 @@
 import React from 'react'
-import Home from './Home'
 
 export default () => {
-  return </>
+  return <p>Placeholder for ProfileContainer</p>
 }
