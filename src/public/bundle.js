@@ -23232,12 +23232,36 @@
 	
 	var _SkillVideo2 = _interopRequireDefault(_SkillVideo);
 	
+	var _Tab = __webpack_require__(203);
+	
+	var _Tab2 = _interopRequireDefault(_Tab);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	var videos = [{
+	  id: 4,
+	  url: "https://www.youtube.com/embed/1w-oQ-i1XB8",
+	  votes: 123,
+	  type: "showcase"
+	}, {
+	  id: 5,
+	  url: "https://www.youtube.com/embed/1w-oQ-i1XB8",
+	  votes: 777,
+	  type: "tutorial"
+	}, {
+	  id: 6,
+	  url: "https://www.youtube.com/embed/1w-oQ-i1XB8",
+	  votes: 456,
+	  type: "showcase"
+	}];
+	var proofs = [];
+	
 	exports.default = function () {
-	  return _react2.default.createElement(_SkillVideo2.default, { id: 6, url: 'https://www.youtube.com/embed/1w-oQ-i1XB8', votes: 320, onUpvote: function onUpvote(evt) {
+	  return _react2.default.createElement(_Tab2.default, { videos: videos,
+	    onUpvote: function onUpvote(evt) {
 	      return console.log(evt.target.id);
-	    }, onDownvote: function onDownvote(evt) {
+	    },
+	    onDownvote: function onDownvote(evt) {
 	      return console.log(evt.target.id);
 	    } });
 	};
@@ -23284,6 +23308,75 @@
 	        { className: "votes" },
 	        this.props.votes
 	      )
+	    );
+	  }
+	});
+
+/***/ },
+/* 203 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _SkillVideo = __webpack_require__(202);
+	
+	var _SkillVideo2 = _interopRequireDefault(_SkillVideo);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = _react2.default.createClass({
+	  displayName: 'Tab',
+	
+	  props: {
+	    videos: _react2.default.PropTypes.array.isRequired,
+	    onUpvote: _react2.default.PropTypes.func.isRequired,
+	    onDownvote: _react2.default.PropTypes.func.isRequired
+	  },
+	  getInitialState: function getInitialState() {
+	    return {
+	      currentTab: "tutorial"
+	    };
+	  },
+	  render: function render() {
+	    var _this = this;
+	
+	    var videos = this.props.videos.filter(function (elem) {
+	      return elem.type === _this.state.currentTab;
+	    }).map(function (elem) {
+	      return _react2.default.createElement(_SkillVideo2.default, { key: elem.id,
+	        id: elem.id,
+	        url: elem.url,
+	        votes: elem.votes,
+	        onUpvote: _this.props.onUpvote,
+	        onDownvote: _this.props.onDownvote });
+	    });
+	
+	    return _react2.default.createElement(
+	      'div',
+	      { className: 'tab' },
+	      _react2.default.createElement(
+	        'button',
+	        { onClick: function onClick() {
+	            return _this.setState({ currentTab: "tutorial" });
+	          } },
+	        'Tutorials'
+	      ),
+	      _react2.default.createElement(
+	        'button',
+	        { onClick: function onClick() {
+	            return _this.setState({ currentTab: "showcase" });
+	          } },
+	        'Showcases'
+	      ),
+	      videos
 	    );
 	  }
 	});
