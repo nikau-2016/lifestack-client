@@ -23,6 +23,12 @@ export default React.createClass({
   onSelect (evt) {
     console.log(evt.value)
   },
+  registerBtn (evt) {
+    console.log('this is the register button')
+  },
+  categoriesBtn (evt) {
+    console.log('this is the categories button')
+  },
   render () {
     return (
     <div>
@@ -44,8 +50,8 @@ export default React.createClass({
               <button className="login-btn" type="button">Login</button>
             </form>
             <hr />
-            <button className="PLACEHOLDER-FOR-OAUTH-BUTTON" type="button">Register</button>
-            <button className="catagories-btn">Catagories</button>
+            <button className="registerbtn" onClick={this.registerBtn}type="button">Register</button>
+            <button className="catagoriesbtn" onClick={this.categoriesBtn} type="button">Categories</button>
             <hr />
             <div>
               <Dropdown options={this.state.options} onChange={this.onSelect}
