@@ -30,7 +30,7 @@ export const retrieveSkill = (id) => {
 export const login = (username, password) => {
   return function (dispatch) {
     request
-      .post(`${url}/login`)
+      .post(`${url}/auth/twitter`)
       .send({username: username, password: password})
       .end((err, res) => {
         if (err) {
