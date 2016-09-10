@@ -13,6 +13,7 @@ export default React.createClass({
       this.props.onLoad(this.props.params.id)
     },
     render () {
+      console.log(this.props.user)
         return (
             <div className="profile">
                 <UserDetail id={this.props.user.id}

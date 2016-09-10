@@ -16,7 +16,7 @@ export default React.createClass({
       <div className="skill-list">
         <table>
           <thead>
-          </thead>        
+          </thead>
           <tbody>
             {skillList}
           </tbody>
