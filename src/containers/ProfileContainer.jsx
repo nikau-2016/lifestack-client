@@ -1,5 +1,12 @@
 import React from 'react'
+import {connect} from 'react-redux'
 
-export default () => {
-  return <p>Placeholder for ProfileContainer</p>
+import Profile from '../components/Profile'
+
+const mapStateToProps = (state) => {
+  return {
+    user: state.user
+  }
 }
+
+export default connect(mapStateToProps)(Profile)
