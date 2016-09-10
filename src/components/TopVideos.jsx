@@ -23,7 +23,7 @@ export default React.createClass({
         const videos = this.state.topVideos.map((elem) => {
             return (
                 <div key={elem.id}>
-                    <iframe src={elem.link} allowFullScreen></iframe>
+                    <iframe src={elem.url} allowFullScreen></iframe>
                     <p className="skill-name">{elem.skillName}</p>
                 </div>
             )
