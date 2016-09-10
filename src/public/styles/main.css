@@ -1,0 +1,29 @@
+body {
+  display:flex;
+  flex-direction: column;
+  align-items: 600px;
+}
+form {
+  background-color: red;
+}
+header {
+  background-color:#6AD4F7;
+  display:flex;
+  justify-content: space-between;
+  text color: black;
+  text-align: center;
+  width:100%;
+  height:100px;
+}
+.button {
+
+}
+.input.username,
+.input.password,
+.button.login.btn {
+  display: flex;
+
+}
+.section {
+
+}
