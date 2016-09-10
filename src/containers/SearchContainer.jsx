@@ -2,7 +2,6 @@ import React from 'react'
 import SkillVideo from '../components/SkillVideo'
 import SearchPage from '../components/SearchPage'
 import {connect} from 'react-redux'
-import {retrieveSkill} from '../actions'
 
 const mapStateToProps = (state) => {
   return {
@@ -10,12 +9,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    getSkill: () => {
-      dispatch(retrieveSkill())
-    }
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(SearchPage)
+export default connect(mapStateToProps)(SearchPage)

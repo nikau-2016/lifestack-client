@@ -3,11 +3,7 @@ import Tab from './Tab'
 
 export default React.createClass({
     props: {
-        skill: React.PropTypes.object.isRequired,
-        getSkill: React.PropTypes.func.isRequired
-    },
-    componentDidMount () {
-        this.props.getSkill()
+        skill: React.PropTypes.object.isRequired
     },
     render () {
         return <section>
