@@ -27,17 +27,16 @@ export const retrieveSkill = (id) => {
   }
 }
 
-export const login = (username, password) => {
+export const getUserDetails = (id) => {
   return function (dispatch) {
     request
-      .get(`${url}/auth/twitter`)
+      .get(`${url}/v1/users/${id}`)
       .end((err, res) => {
         if (err) {
           // ERROR HANDLING HERE
           console.log(err)
         } else {
           dispatch(setUser(res.body.data))
-          dispatch(push('/profile'))
         }
       })
   }
