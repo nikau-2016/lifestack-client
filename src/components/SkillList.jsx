@@ -15,7 +15,11 @@ export default React.createClass({
     return(
       <div className="skill-list">
         <table>
-          {skillList}
+          <thead>
+          </thead>        
+          <tbody>
+            {skillList}
+          </tbody>
         </table>
       </div>
     )
