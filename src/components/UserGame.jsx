@@ -3,15 +3,15 @@ import React from 'react'
 export default React.createClass({
     props: {
         level: React.PropTypes.number.isRequired,
-        totalXP: React.PropTypes.number.isRequired,
-        remainingXP: React.PropTypes.number.isRequired
+        totalXp: React.PropTypes.number.isRequired,
+        remainingXp: React.PropTypes.number.isRequired
     },
     render () {
         return (
             <div className = "user-game">
                 <p className = "level">{this.props.level}</p>
-                <p className = "totalXP">{this.props.totalXP}</p>
-                <p className = "remainingXP">{this.props.remainingXP}</p>
+                <p className = "totalXp">{this.props.totalXp}</p>
+                <p className = "remainingXp">{this.props.remainingXp}</p>
             </div>
         )
     }
