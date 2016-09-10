@@ -16,7 +16,7 @@ export default React.createClass({
         if (err) {
           return
         }
-        console.log("options", createOptions(res.body.data))
+
         this.setState({options: createOptions(res.body.data)})
       })
   },
