@@ -1,7 +1,6 @@
 import request from 'superagent'
 const env = process.env.NODE_ENV || 'development'
-const url = env === 'production' ? 'https://s2pid-kweschinz.herokuapp.com/'
-
+const url = env === 'production' ? 'placeholderURL'
                                     :'http://localhost:3000/'
 
 export function retrieveSkill () {
