@@ -13,11 +13,10 @@ export default React.createClass({
                 <UserDetail id={this.props.user.id}
                     username={this.props.user.username}
                     profile_pic={this.props.user.profile_pic} />
-                <SkillList skillList={this.props.user.skillList} />
-
                 <UserGame level ={this.props.user.level}
                     totalXp ={this.props.user.totalXp}
                     remainingXp ={this.props.user.remainingXp} />
+                <SkillList skillList={this.props.user.skillList} />
             </div>
         )
     }

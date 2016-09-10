@@ -2,6 +2,9 @@ const initialState = {
   id: 101,
   username: "Jimmy",
   profile_pic: "http://www.nyan.cat/cats/original.gif",
+  level: 1,
+  totalXp: 43,
+  remainingXp: 543,
   skillList: [
       {
         id: 201,
