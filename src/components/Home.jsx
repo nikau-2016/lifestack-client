@@ -10,7 +10,7 @@ export default React.createClass({
     render () {
         return (
             <div className="Home">
-                <section className="mission-statement"> Life skillz got da millenials sorted. Whether you need to fix, build, create or learn, Lifestack gives you practical solutions to the problems life throws at you. We empower you to efficiently solve each new challenge and make your life better and easier.
+                <section className="mission-statement"> "Life skillz got da millenials sorted. Whether you need to fix, build, create or learn, Lifestack gives you practical solutions to the problems life throws at you. We empower you to efficiently solve each new challenge and make your life better and easier."
                 </section>
                 <section className="top-video">
                     <h3>Top videos</h3>
