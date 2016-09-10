@@ -5,11 +5,15 @@ import request from 'superagent'
 
 export default React.createClass({
   props: {
-    onSkillSelect: React.PropTypes.func.isRequired
+    onSkillSelect: React.PropTypes.func.isRequired,
+    onLogin: React.PropTypes.func.isRequired,
+    onRegister: React.PropTypes.func.isRequired
   },
   getInitialState () {
     return {
-      options: []
+      options: [],
+      username: "",
+      password: ""
     }
   },
   componentDidMount () {
@@ -19,33 +23,27 @@ export default React.createClass({
         if (err) {
           return
         }
-
         this.setState({options: createOptions(res.body.data)})
       })
   },
-  registerBtn (evt) {
-    console.log('this is the register button')
+  changeUsername (evt) {
+    this.setState({username: evt.value})
   },
-  categoriesBtn (evt) {
-    console.log('this is the categories button')
+  changePassword (evt) {
+    this.setState({password: evt.value})
   },
   render () {
     return (
     <div>
       <header>
-      <hr />
         <h1><Link to={'/'}>#ADULTING</Link></h1>
           <Link to={'/profile'}>Profile</Link>
           <form>
-            <input type="text" className="username" placeholder="UserName" />
-              <hr />
-              <input type="text" className="password" placeholder="Password" />
-                <hr />
-              <button className="login-btn" type="button">Login</button>
+            <input type="text" className="username" onInput={this.changeUsername} value={this.state.username} placeholder="Username" />
+              <input type="text" className="password" onInput={this.changePassword} value={this.state.password} placeholder="Password" />
+              <button className="login-btn" onClick={this.props.onLogin} type="button">Login</button>
             </form>
-            <hr />
-            <button className="registerbtn" onClick={this.registerBtn}type="button">Register</button>
-            <hr />
+            <button className="registerbtn" onClick={this.props.onRegister} type="button">Register</button>
             <div>
               <Dropdown options={this.state.options} onChange={this.props.onSkillSelect}
               value={this.state.options[0]} placeholder="Select an option" />
