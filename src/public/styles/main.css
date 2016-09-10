@@ -6,10 +6,6 @@ body {
   align-items: 600px;
 }
 
-form {
-
-}
-
 header {
   font-family: 'Ubuntu', sans-serif;
   border-radius: 8px;
@@ -24,15 +20,10 @@ header {
 
 button {
   font-family: 'Ubuntu', sans-serif;
-
 }
 
 input.username, input.password, input.login, button.register.btn {
   font-family: 'Ubuntu', sans-serif;
-
-}
-.section {
-
 }
 
 .mission-statement, .top-video, .About {
