@@ -33,7 +33,6 @@ export default React.createClass({
     return (
     <div>
       <header>
-      <hr />
         <h1><Link to={'/'}>#ADULTING</Link></h1>
           <Link to={'/profile'}>Profile</Link>
           <form>
