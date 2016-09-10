@@ -1,11 +1,12 @@
 import React from 'react'
-import SkillList from '../components/SkillList'
+import {connect} from 'react-redux'
 
-export default () => {
-  return(
-    <div>
-      <p>Placeholder for ProfileContainer</p>
-      <SkillList />
-    </div>
-  )
+import Profile from '../components/Profile'
+
+const mapStateToProps = (state) => {
+  return {
+    user: state.user
+  }
 }
+
+export default connect(mapStateToProps)(Profile)

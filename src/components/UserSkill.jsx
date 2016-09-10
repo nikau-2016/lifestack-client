@@ -8,7 +8,6 @@ export default React.createClass({
     skillXp: React.PropTypes.number.isRequired,
     onClickUpload: React.PropTypes.func.isRequired
   },
-
   render() {
     return(
           <tr className="user-skill" id={this.props.id}>

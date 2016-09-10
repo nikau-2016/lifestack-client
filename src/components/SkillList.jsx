@@ -3,10 +3,10 @@ import UserSkill from './UserSkill'
 
 export default React.createClass({
   props: {
-    skills: React.PropTypes.array.isRequired
+    skillList: React.PropTypes.array.isRequired
   },
   render() {
-    const skillList = this.props.skills.map((elem) => {
+    const skillList = this.props.skillList.map((elem) => {
       return <UserSkill key={elem.id}
               skillName={elem.skillName}
               status={elem.status}
