@@ -16,7 +16,9 @@ export default React.createClass({
             <td>{this.props.skillXp}</td>
             <td>
               <input type="text" placeholder="Showcase your learned skill!" />
-              <button type="button" onClickUpload={this.props.onClickUpload}>Upload</button>
+              <button type="button"
+              onClick={evt => console.log("Clicked Upload button. This needs to upload a url given to the input box")}>
+              Upload</button>
             </td>
           </tr>
     )
