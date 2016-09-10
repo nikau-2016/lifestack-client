@@ -4,6 +4,9 @@ import Dropdown from 'react-dropdown'
 import request from 'superagent'
 
 export default React.createClass({
+  props: {
+    onSkillSelect: React.PropTypes.func.isRequired
+  },
   getInitialState () {
     return {
       options: []
@@ -20,9 +23,6 @@ export default React.createClass({
         this.setState({options: createOptions(res.body.data)})
       })
   },
-  onSelect (evt) {
-    console.log(evt.value)
-  },
   registerBtn (evt) {
     console.log('this is the register button')
   },
@@ -34,14 +34,8 @@ export default React.createClass({
     <div>
       <header>
       <hr />
-        <h1>#ADULTING</h1>
-          <hr />
-          <Link to={'/'}>Home</Link>
-          <hr />
+        <h1><Link to={'/'}>#ADULTING</Link></h1>
           <Link to={'/profile'}>Profile</Link>
-          <hr />
-          <Link to={'/search'}>Search</Link>
-          <hr />
           <form>
             <input type="text" className="username" placeholder="UserName" />
               <hr />
@@ -51,10 +45,9 @@ export default React.createClass({
             </form>
             <hr />
             <button className="registerbtn" onClick={this.registerBtn}type="button">Register</button>
-            <button className="catagoriesbtn" onClick={this.categoriesBtn} type="button">Categories</button>
             <hr />
             <div>
-              <Dropdown options={this.state.options} onChange={this.onSelect}
+              <Dropdown options={this.state.options} onChange={this.props.onSkillSelect}
               value={this.state.options[0]} placeholder="Select an option" />
             </div>
       </header>
