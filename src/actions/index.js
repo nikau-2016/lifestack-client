@@ -30,8 +30,7 @@ export const retrieveSkill = (id) => {
 export const login = (username, password) => {
   return function (dispatch) {
     request
-      .post(`${url}/auth/twitter`)
-      .send({username: username, password: password})
+      .get(`${url}/auth/twitter`)
       .end((err, res) => {
         if (err) {
           // ERROR HANDLING HERE
