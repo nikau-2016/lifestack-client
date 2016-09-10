@@ -33,19 +33,14 @@ export default React.createClass({
     return (
     <div>
       <header>
-      <hr />
         <h1><Link to={'/'}>#ADULTING</Link></h1>
           <Link to={'/profile'}>Profile</Link>
           <form>
             <input type="text" className="username" placeholder="UserName" />
-              <hr />
               <input type="text" className="password" placeholder="Password" />
-                <hr />
               <button className="login-btn" type="button">Login</button>
             </form>
-            <hr />
             <button className="registerbtn" onClick={this.registerBtn}type="button">Register</button>
-            <hr />
             <div>
               <Dropdown options={this.state.options} onChange={this.props.onSkillSelect}
               value={this.state.options[0]} placeholder="Select an option" />
