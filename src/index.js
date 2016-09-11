@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <Route component={HeaderContainer}>
           <Route path='/' component={Home} />
           <Route path='/search' component={SearchContainer} />
-          <Route path='/profile' component={ProfileContainer} />
+          <Route path='/profile/:id' component={ProfileContainer} />
         </Route>
       </Router>
     </Provider>,
