@@ -27,6 +27,22 @@ export const retrieveSkill = (id) => {
   }
 }
 
+export const changeStatus = (skill_id, status) => {
+  return function (dispatch, getState) {
+    console.log(getState().user.id, skill_id, status)
+    request
+      .put(`${url}/v1/users/${getState().user.id}/status`)
+      .send({status: status, skill_id: skill_id})
+      .end((err, res) => {
+        if (err) {
+          console.log(err)
+        } else {
+          console.log(res)
+        }
+      })
+  }
+}
+
 export const getUserDetails = (id) => {
   return function (dispatch) {
     request
