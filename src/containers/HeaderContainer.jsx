@@ -17,4 +17,10 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(undefined, mapDispatchToProps)(Header)
+const mapStateToProps = (state) => {
+  return {
+    userId: state.user.id
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header)
