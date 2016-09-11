@@ -42,6 +42,21 @@ export const getUserDetails = (id) => {
   }
 }
 
+export const uploadShowcase = (user_id, skill_id, showcaseUrl) => {
+  return function (dispatch) {
+    request
+      .put(`${url}/users/${id}/showcase`)
+      .end((err, res) => {
+        if (err) {
+          // ERROR HANDLING HERE
+          console.log(err)
+        } else {
+          dispatch(getUserDetails(res.body.data.skillList))
+        }
+      })
+  }
+}
+
 const setUser = (user) => {
   return {
     type: "SET_USER",
