@@ -18,6 +18,7 @@ export default React.createClass({
       .filter(elem => {
         return elem.type === this.state.currentTab
       })
+      .sort((a, b) => a.votes < b.votes)
       .map(elem => {
         return <SkillVideo key={elem.id}
                     id={elem.id}
