@@ -35,7 +35,7 @@ export default React.createClass({
     return (
       <div>
         <header>
-          <h1><Link to={'/'}>#ADULTING</Link></h1>
+          <h1 class ="heading"><Link to={'/'}>#ADULTING</Link></h1>
           <a href="http://localhost:3000/auth/twitter">Sign Up with Twitter</a>
           <button onClick={this.props.onProfile}>Profile</button>
           <div>
@@ -52,27 +52,27 @@ export default React.createClass({
 })
 
 function createOptions (data) {
-  const dropdown = data.map(elem => elem.category)
-                      .filter((elem, i, ar) => ar.indexOf(elem) === i)
-                      .map(elem => makeCategory(elem))
+    const dropdown = data.map(elem => elem.category)
+                         .filter((elem, i, ar) => ar.indexOf(elem) === i)
+                         .map(elem => makeCategory(elem))
 
-  data.forEach(elem => {
-    dropdown.forEach((category, i) => {
-      if (elem.category === category.name) {
-        dropdown[i].items.push(makeOption(elem.id, elem.skillName))
-      }
+    data.forEach(elem => {
+        dropdown.forEach((category, i) => {
+            if (elem.category === category.name) {
+                dropdown[i].items.push(makeOption(elem.id, elem.skillName))
+            }
+        })
     })
-  })
 
-  return [{ value: '0', label: 'Select a skill' }, ...dropdown]
+    return [{ value: '0', label: 'Select a skill' }, ...dropdown]
 }
 
 function makeCategory (categoryName) {
-  return {
-    type: 'group', name: categoryName, items: []
-  }
+    return {
+        type: 'group', name: categoryName, items: []
+    }
 }
 
 function makeOption (id, skillName) {
-  return { value: id, label: skillName}
+    return { value: id, label: skillName}
 }
