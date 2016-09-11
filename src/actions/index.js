@@ -48,3 +48,37 @@ const setUser = (user) => {
     user: user
   }
 }
+
+export const upVote = (video_id) => {
+  return (dispatch, getState) => {
+    const id = getState().search.id
+    request
+      .put(`${url}/v1/skills/${id}/upvote/${video_id}`)
+      .end((err, res) => {
+        if (err) {
+          // ERROR HANDLING HERE
+          console.log(err)
+        } else {
+          console.log("Upvote", res.body.data)
+          dispatch(updateSearch(res.body.data))
+        }
+      })
+  }
+}
+
+export const downVote = (video_id) => {
+  return (dispatch, getState) => {
+    const id = getState().search.id
+    request
+      .put(`${url}/v1/skills/${id}/downvote/${video_id}`)
+      .end((err, res) => {
+        if (err) {
+          // ERROR HANDLING HERE
+          console.log(err)
+        } else {
+          console.log("Downvote", res.body.data)
+          dispatch(updateSearch(res.body.data))
+        }
+      })
+  }
+}
