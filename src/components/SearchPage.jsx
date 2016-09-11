@@ -3,7 +3,9 @@ import Tab from './Tab'
 
 export default React.createClass({
     props: {
-        skill: React.PropTypes.object.isRequired
+        skill: React.PropTypes.object.isRequired,
+        onUpvote: React.PropTypes.func.isRequired,
+        onDownvote: React.PropTypes.func.isRequired
     },
     render () {
         return (
@@ -11,7 +13,7 @@ export default React.createClass({
             <h1>{this.props.skill.skillName}</h1>
             <h3>{this.props.skill.category}</h3>
             <button>Got It!</button>
-            <Tab videos={this.props.skill.videos} />
+            <Tab onUpvote={this.props.onUpvote} onDownvote={this.props.onDownvote} videos={this.props.skill.videos} />
           </section>
         )
   }

@@ -49,35 +49,35 @@ const setUser = (user) => {
   }
 }
 
-export const upVote = (id, video_id) => {
+export const upVote = (video_id) => {
   return (dispatch, getState) => {
+    const id = getState().search.id
     request
-      .post(`${url}/v1/skills/${id}/upvote/${video_id}`)
+      .put(`${url}/v1/skills/${id}/upvote/${video_id}`)
       .end((err, res) => {
         if (err) {
           // ERROR HANDLING HERE
           console.log(err)
         } else {
-          console.log("Upvote")
-          dispatch(retrieveSkill(id))
-          dispatch(updateSearch())
+          console.log("Upvote", res.body.data)
+          dispatch(updateSearch(res.body.data))
         }
       })
   }
 }
 
-export const downVote = (id) => {
+export const downVote = (video_id) => {
   return (dispatch, getState) => {
+    const id = getState().search.id
     request
-      .post(`${url}/v1/skills/${id}/downvote/${video_id}`)
+      .put(`${url}/v1/skills/${id}/downvote/${video_id}`)
       .end((err, res) => {
         if (err) {
           // ERROR HANDLING HERE
           console.log(err)
         } else {
-          console.log("Downvote")
-          dispatch(retrieveSkill(id))
-          dispatch(updateSearch())
+          console.log("Downvote", res.body.data)
+          dispatch(updateSearch(res.body.data))
         }
       })
   }
