@@ -71,7 +71,6 @@ export const uploadShowcase = (skill_id, showcaseUrl) => {
           // ERROR HANDLING HERE
           console.log(err)
         } else {
-          console.log(id)
           dispatch(setUser(res.body.data))
         }
       })

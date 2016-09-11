@@ -8,7 +8,9 @@ export default React.createClass({
   },
   render() {
     const skillList = this.props.skillList.map((elem) => {
-      return <UserSkill key={elem.id}
+      return <UserSkill
+              key={elem.id}
+              id={elem.id}
               skillName={elem.skillName}
               status={elem.status}
               skillXp={elem.skillXp}
