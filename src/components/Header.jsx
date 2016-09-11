@@ -4,49 +4,51 @@ import Dropdown from 'react-dropdown'
 import request from 'superagent'
 
 export default React.createClass({
-    props: {
-        onSkillSelect: React.PropTypes.func.isRequired,
-        onLogin: React.PropTypes.func.isRequired,
-        onRegister: React.PropTypes.func.isRequired
-    },
-    getInitialState () {
-        return {
-            options: [],
-            username: "",
-            password: ""
-        }
-    },
-    componentDidMount () {
-        request
-        .get("http://localhost:3000/v1/skills")
-        .end((err, res) => {
-            if (err) {
-                return
-            }
-            this.setState({options: createOptions(res.body.data)})
-        })
-    },
-    onClickLogin () {
-        this.props.onLogin(this.state.username, this.state.password)
-        this.setState({username: "", password: ""})
-    },
-    render () {
-        return (
-            <div>
-                <header>
-                    <h1 class ="heading"><Link to={'/'}>#ADULTING</Link></h1>
-                    <a href="/auth/twitter">Sign Up with Twitter</a>
-                    <div>
-                        <Dropdown options={this.state.options} onChange={this.props.onSkillSelect}
-                        value={this.state.options[0]} placeholder="Select an option" />
-                    </div>
-                </header>
-                <div>
-                    {this.props.children}
-                </div>
-            </div>
-        )
+  props: {
+    onSkillSelect: React.PropTypes.func.isRequired,
+    onLogin: React.PropTypes.func.isRequired,
+    onRegister: React.PropTypes.func.isRequired,
+    onProfile: React.PropTypes.func.isRequired
+  },
+  getInitialState () {
+    return {
+      options: [],
+      username: "",
+      password: ""
     }
+  },
+  componentDidMount () {
+    request
+      .get("http://localhost:3000/v1/skills")
+      .end((err, res) => {
+        if (err) {
+          return
+        }
+        this.setState({options: createOptions(res.body.data)})
+      })
+  },
+  onClickLogin () {
+    this.props.onLogin(this.state.username, this.state.password)
+    this.setState({username: "", password: ""})
+  },
+  render () {
+    return (
+      <div>
+        <header>
+          <h1 class ="heading"><Link to={'/'}>#ADULTING</Link></h1>
+          <a href="http://localhost:3000/auth/twitter">Sign Up with Twitter</a>
+          <button onClick={this.props.onProfile}>Profile</button>
+          <div>
+            <Dropdown options={this.state.options} onChange={this.props.onSkillSelect}
+            value={this.state.options[0]} placeholder="Select an option" />
+          </div>
+        </header>
+        <div>
+          {this.props.children}
+        </div>
+      </div>
+    )
+  }
 })
 
 function createOptions (data) {
