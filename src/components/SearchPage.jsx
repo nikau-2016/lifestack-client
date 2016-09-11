@@ -6,11 +6,13 @@ export default React.createClass({
         skill: React.PropTypes.object.isRequired
     },
     render () {
-        return <section>
-                <h1>{this.props.skill.skillName}</h1>
-                <h3>{this.props.skill.category}</h3>
-                <button>Got It!</button>
-                <Tab videos={this.props.skill.videos} />
-            </section>
-        }
-    })
+        return (
+          <section>
+            <h1>{this.props.skill.skillName}</h1>
+            <h3>{this.props.skill.category}</h3>
+            <button>Got It!</button>
+            <Tab videos={this.props.skill.videos} />
+          </section>
+        )
+  }
+})

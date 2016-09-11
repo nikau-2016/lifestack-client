@@ -49,16 +49,18 @@ const setUser = (user) => {
   }
 }
 
-export const upVote = (id) => {
+export const upVote = (id, video_id) => {
   return (dispatch, getState) => {
     request
-      .post(`${url}/v1/skills/${id}/upvote`)
+      .post(`${url}/v1/skills/${id}/upvote/${video_id}`)
       .end((err, res) => {
         if (err) {
           // ERROR HANDLING HERE
           console.log(err)
         } else {
           console.log("Upvote")
+          dispatch(retrieveSkill(id))
+          dispatch(updateSearch())
         }
       })
   }
@@ -67,13 +69,15 @@ export const upVote = (id) => {
 export const downVote = (id) => {
   return (dispatch, getState) => {
     request
-    .post(`${url}/v1/skills/${id}/downvote`)
-    .end((err, res) => {
-      if (err) {
+      .post(`${url}/v1/skills/${id}/downvote/${video_id}`)
+      .end((err, res) => {
+        if (err) {
           // ERROR HANDLING HERE
           console.log(err)
         } else {
           console.log("Downvote")
+          dispatch(retrieveSkill(id))
+          dispatch(updateSearch())
         }
       })
   }
