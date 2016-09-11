@@ -53,8 +53,8 @@ export default React.createClass({
 
 function createOptions (data) {
     const dropdown = data.map(elem => elem.category)
-    .filter((elem, i, ar) => ar.indexOf(elem) === i)
-    .map(elem => makeCategory(elem))
+                         .filter((elem, i, ar) => ar.indexOf(elem) === i)
+                         .map(elem => makeCategory(elem))
 
     data.forEach(elem => {
         dropdown.forEach((category, i) => {
