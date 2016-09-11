@@ -35,7 +35,7 @@ export default React.createClass({
       <div>
         <header>
           <h1><Link to={'/'}>#ADULTING</Link></h1>
-          <a href="/auth/twitter">Sign Up with Twitter</a>
+          <a href="http://localhost:3000/auth/twitter">Sign Up with Twitter</a>
           <div>
             <Dropdown options={this.state.options} onChange={this.props.onSkillSelect}
             value={this.state.options[0]} placeholder="Select an option" />
