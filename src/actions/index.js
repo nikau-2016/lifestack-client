@@ -50,3 +50,33 @@ const setUser = (user) => {
     user: user
   }
 }
+
+export const upVote = (id) => {
+  return (dispatch, getState) => {
+    request
+      .post(`${url}/v1/skills/${id}/upvote`)
+      .end((err, res) => {
+        if (err) {
+          // ERROR HANDLING HERE
+          console.log(err)
+        } else {
+          console.log("Upvote")
+        }
+      })
+  }
+}
+
+export const downVote = (id) => {
+  return (dispatch, getState) => {
+    request
+    .post(`${url}/v1/skills/${id}/downvote`)
+    .end((err, res) => {
+      if (err) {
+          // ERROR HANDLING HERE
+          console.log(err)
+        } else {
+          console.log("Downvote")
+        }
+      })
+  }
+}
