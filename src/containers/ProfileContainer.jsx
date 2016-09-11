@@ -15,8 +15,8 @@ const mapDispatchToProps = (dispatch) => {
     onLoad: (id) => {
       dispatch(getUserDetails(id))
     },
-    onShowcaseUpload: (user_id, skill_id, showcaseUrl) => {
-      dispatch(uploadShowcase(user_id, skill_id, showcaseUrl))
+    onClickUpload: (skill_id, showcaseUrl) => {
+      dispatch(uploadShowcase(skill_id, showcaseUrl))
     }
   }
 }

@@ -19,7 +19,7 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(upVote(evt.target.id))
     },
     onDownvote: (evt) => {
-      dispatch(downVote(evt.target.id))
+      dispatch(downVote(evt.target.id, this.props.id, showcaseUrl))
     }
   }
 }
