@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from '../components/Header'
 import {connect} from 'react-redux'
-import {retrieveSkill, displayProfile} from '../actions'
+import {retrieveSkill, logout, displayProfile} from '../actions'
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -13,6 +13,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     onProfile: () => {
       dispatch(displayProfile())
+    },
+    onLogout: (userId) => {
+      dispatch(logout(userId))
     }
   }
 }
