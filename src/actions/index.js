@@ -59,7 +59,6 @@ export const upVote = (video_id) => {
           // ERROR HANDLING HERE
           console.log(err)
         } else {
-          console.log("Upvote", res.body.data)
           dispatch(updateSearch(res.body.data))
         }
       })
@@ -76,7 +75,6 @@ export const downVote = (video_id) => {
           // ERROR HANDLING HERE
           console.log(err)
         } else {
-          console.log("Downvote", res.body.data)
           dispatch(updateSearch(res.body.data))
         }
       })
