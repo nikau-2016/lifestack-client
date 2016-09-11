@@ -10,7 +10,7 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = (dispatch, state) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     onWatchedSkill: (evt) => {
       dispatch(changeStatus(evt.target.name, "watched"))
