@@ -38,15 +38,15 @@ export default React.createClass({
       return (
         <div>
           <header>
-          <h1><Link to={'/'}>#ADULTING</Link></h1>
-          <a href="http://localhost:3000/auth/twitter">Sign Up with Twitter</a>
-          <div>
-          <Dropdown options={this.state.options} onChange={this.props.onSkillSelect}
-          value={this.state.options[0]} placeholder="Select an option" />
-          </div>
+            <h1><Link to={'/'}>#ADULTING</Link></h1>
+            <a href="http://localhost:3000/auth/twitter">Sign Up with Twitter</a>
+            <div>
+            <Dropdown options={this.state.options} onChange={this.props.onSkillSelect}
+            value={this.state.options[0]} placeholder="Select an option" />
+            </div>
           </header>
           <div>
-          {this.props.children}
+            {this.props.children}
           </div>
         </div>
       )
@@ -54,16 +54,16 @@ export default React.createClass({
       return (
         <div>
           <header>
-          <h1><Link to={'/'}>#ADULTING</Link></h1>
-          <button onClick={this.props.onProfile}>Profile</button>
-          <button onClick={this.props.onLogout}>Logout</button>
-          <div>
-          <Dropdown options={this.state.options} onChange={this.props.onSkillSelect}
-          value={this.state.options[0]} placeholder="Select an option" />
-          </div>
+            <h1><Link to={'/'}>#ADULTING</Link></h1>
+            <button onClick={this.props.onProfile}>Profile</button>
+            <button onClick={this.props.onLogout}>Logout</button>
+            <div>
+              <Dropdown options={this.state.options} onChange={this.props.onSkillSelect}
+              value={this.state.options[0]} placeholder="Select an option" />
+            </div>
           </header>
           <div>
-          {this.props.children}
+            {this.props.children}
           </div>
         </div>
       )
