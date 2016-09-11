@@ -5,9 +5,15 @@ import UserGame from './UserGame'
 
 export default React.createClass({
     props: {
-        user: React.PropTypes.object.isRequired
+      params: React.PropTypes.object.isRequired,
+      user: React.PropTypes.object.isRequired,
+      onLoad: React.PropTypes.func.isRequired
+    },
+    componentWillMount () {
+      this.props.onLoad(this.props.params.id)
     },
     render () {
+      console.log(this.props.user)
         return (
             <div className="profile">
                 <UserDetail id={this.props.user.id}
