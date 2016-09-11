@@ -10,7 +10,7 @@ export default React.createClass({
     render () {
         return (
             <div className="Home">
-                <img class="banner-image" src="styles/images/group-of-millenials.jpg"></img>
+                <img className="banner-image" src="styles/images/group-of-millenials.jpg"></img>
                 <section className="mission-statement"> "Life skills for millenials"<br></br>Whether you need to fix, build, create or learn<br></br>Lifestack gives you practical solutions<br></br> to the problems life throws at you.<br />
                 </section>
                 <section className="About">

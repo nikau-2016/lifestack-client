@@ -101,3 +101,24 @@ export const downVote = (video_id) => {
       })
   }
 }
+
+export const logout = (userId) => {
+  return (dispatch) => {
+    request
+      .get(`${url}/logout`)
+      .end((err, res) => {
+        if (err) {
+          console.log(err)
+        } else {
+          dispatch(resetUser())
+          dispatch(push('/'))
+        }
+      })
+  }
+}
+
+const resetUser = () => {
+  return {
+    type: 'RESET_USER'
+  }
+}

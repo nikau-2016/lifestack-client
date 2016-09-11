@@ -7,6 +7,7 @@ export default React.createClass({
   props: {
     onSkillSelect: React.PropTypes.func.isRequired,
     onLogin: React.PropTypes.func.isRequired,
+    onLogout: React.PropTypes.func.isRequired,
     onRegister: React.PropTypes.func.isRequired,
     onProfile: React.PropTypes.func.isRequired,
     userId: React.PropTypes.number.isRequired
@@ -55,6 +56,7 @@ export default React.createClass({
           <header>
           <h1><Link to={'/'}>#ADULTING</Link></h1>
           <button onClick={this.props.onProfile}>Profile</button>
+          <button onClick={this.props.onLogout}>Logout</button>
           <div>
           <Dropdown options={this.state.options} onChange={this.props.onSkillSelect}
           value={this.state.options[0]} placeholder="Select an option" />
