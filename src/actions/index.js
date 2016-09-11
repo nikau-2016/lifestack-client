@@ -27,6 +27,21 @@ export const retrieveSkill = (id) => {
   }
 }
 
+export const changeStatus = (skill_id, status) => {
+  return function (dispatch, getState) {
+    request
+      .put(`${url}/v1/users/${getState().user.id}/status`)
+      .send({status: status, skill_id: skill_id})
+      .end((err, res) => {
+        if (err) {
+          console.log(err)
+        } else {
+          dispatch(push(`/profile/${getState().user.id}`))
+        }
+      })
+  }
+}
+
 export const getUserDetails = (id) => {
   return function (dispatch) {
     request
@@ -46,6 +61,12 @@ const setUser = (user) => {
   return {
     type: "SET_USER",
     user: user
+  }
+}
+
+export const displayProfile = () => {
+  return function (dispatch, getState) {
+    dispatch(push(`/profile/${getState().user.id}`))
   }
 }
 
