@@ -29,7 +29,6 @@ export const retrieveSkill = (id) => {
 
 export const changeStatus = (skill_id, status) => {
   return function (dispatch, getState) {
-    console.log(getState().user.id, skill_id, status)
     request
       .put(`${url}/v1/users/${getState().user.id}/status`)
       .send({status: status, skill_id: skill_id})
@@ -37,7 +36,7 @@ export const changeStatus = (skill_id, status) => {
         if (err) {
           console.log(err)
         } else {
-          console.log(res)
+          dispatch(push(`/profile/${getState().user.id}`))
         }
       })
   }
@@ -62,5 +61,11 @@ const setUser = (user) => {
   return {
     type: "SET_USER",
     user: user
+  }
+}
+
+export const displayProfile = () => {
+  return function (dispatch, getState) {
+    dispatch(push(`/profile/${getState().user.id}`))
   }
 }

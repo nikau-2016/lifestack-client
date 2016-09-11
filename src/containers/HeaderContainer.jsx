@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from '../components/Header'
 import {connect} from 'react-redux'
-import {retrieveSkill, login} from '../actions'
+import {retrieveSkill, displayProfile} from '../actions'
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -10,6 +10,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     onLogin: (username, password) => {
       dispatch(login(username, password))
+    },
+    onProfile: () => {
+      dispatch(displayProfile())
     }
   }
 }
