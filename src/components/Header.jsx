@@ -36,8 +36,9 @@ export default React.createClass({
     return (
       <div>
         <header>
-          <h1><Link to={'/'}>#ADULTING</Link></h1>
-            <Link to={'/profile'}>Profile</Link>
+          <h1 class ="heading"><Link to={'/'}>#ADULTING</Link></h1>
+            <Link class="profile" to={'/profile'}>Profile</Link>
+            <div class="login fields">
             <form>
               <input type="text" className="username" onChange={this.changeUsername} value={this.state.username} placeholder="Username" />
                 <input type="text" className="password" onChange={this.changePassword} value={this.state.password} placeholder="Password" />
@@ -48,6 +49,7 @@ export default React.createClass({
                 <Dropdown options={this.state.options} onChange={this.props.onSkillSelect}
                 value={this.state.options[0]} placeholder="Select an option" />
               </div>
+          </div>
         </header>
         <div>
           {this.props.children}
