@@ -33,9 +33,6 @@ export default React.createClass({
       <button onClick={() => this.setState({currentTab:"tutorial"})}>
         Tutorials
       </button>
-      <button onClick={() => this.setState({currentTab:"showcase"})}>
-        Showcases
-      </button>
         {videos}
       </div>
     )
