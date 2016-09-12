@@ -26,7 +26,7 @@ export default React.createClass({
             <th>{this.props.skillName}</th>
             <td>{this.props.status}</td>
             <td>{this.props.skillXp}</td>
-            <TwitterButton url="http://localhost:5000/#/search" text={`I've just learned ${this.props.skillName} #adulting # lifestack`}
+            <td><TwitterButton url="http://localhost:5000/#/search" text={`I've just learned ${this.props.skillName} #adulting # lifestack`} /></td>
             <td>
               <input
                 type="text"
