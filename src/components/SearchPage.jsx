@@ -9,7 +9,8 @@ export default React.createClass({
         onSelected: React.PropTypes.func.isRequired,
         onWatchedSkill: React.PropTypes.func.isRequired,
         onUpvote: React.PropTypes.func.isRequired,
-        onDownvote: React.PropTypes.func.isRequired
+        onDownvote: React.PropTypes.func.isRequired,
+        userId: React.PropTypes.number.isRequired
     },
     componentDidMount () {
       request
@@ -27,12 +28,33 @@ export default React.createClass({
       }
     },
     render () {
-        return <section>
-                <Searchbar options={this.state.options} onSelected={this.props.onSelected}/>
-                <h1>{this.props.skill.skillName}</h1>
-                <h3>{this.props.skill.category}</h3>
-                <button name={this.props.skill.id} onClick={this.props.onWatchedSkill}>Got It!</button>
-                <Tab onUpvote={this.props.onUpvote} onDownvote={this.props.onDownvote} videos={this.props.skill.videos} />
-            </section>
+      if (this.props.userId === 0) {
+        return (
+          <section>
+            <Searchbar options={this.state.options} onSelected={this.props.onSelected}/>
+            <h1>{this.props.skill.skillName}</h1>
+            <h3>{this.props.skill.category}</h3>
+            <Tab
+              onUpvote={this.props.onUpvote}
+              onDownvote={this.props.onDownvote}
+              videos={this.props.skill.videos} />
+          </section>
+        )
+      } else {
+        return (
+          <section>
+            <Searchbar options={this.state.options} onSelected={this.props.onSelected}/>
+            <h1>{this.props.skill.skillName}</h1>
+            <h3>{this.props.skill.category}</h3>
+            <button
+            name={this.props.skill.id}
+            onClick={this.props.onWatchedSkill}>Got It!</button>
+            <Tab
+              onUpvote={this.props.onUpvote}
+              onDownvote={this.props.onDownvote}
+              videos={this.props.skill.videos} />
+          </section>
+        )
+      }
     }
 })
