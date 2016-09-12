@@ -21,7 +21,6 @@ export default React.createClass({
       this.props.onRandomSkill(this.props.params.id)
     },
     render () {
-      console.log('in profile', this.props.user.id)
         return (
             <div className="profile">
                 <div>
