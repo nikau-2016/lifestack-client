@@ -14,6 +14,7 @@ export default React.createClass({
               skillName={elem.skillName}
               status={elem.status}
               skillXp={elem.skillXp}
+              difficulty={elem.difficulty}
               onClickUpload={this.props.onClickUpload} />
     })
     return(
