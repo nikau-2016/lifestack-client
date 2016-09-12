@@ -23,7 +23,6 @@ export default React.createClass({
     })
   },
   render() {
-    console.log(this.props.skillList)
     const skillList = this.props.skillList.map((elem) => {
       return <UserSkill
               key={elem.id}

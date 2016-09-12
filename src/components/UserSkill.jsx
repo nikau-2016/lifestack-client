@@ -17,7 +17,11 @@ export default React.createClass({
             <td>{this.props.status}</td>
             <td>{this.props.skillXp}</td>
             <td>{this.props.showcaseURL}</td>
-            <td><TwitterButton url="http://localhost:5000/#/search" text={`I've just learned ${this.props.skillName} #adulting # lifestack`} /></td>
+            <td>
+              <TwitterButton
+                url="http://localhost:5000/#/search"
+                text={`I've just learned ${this.props.skillName} #adulting # lifestack`} />
+            </td>
           </tr>
     )
   }
