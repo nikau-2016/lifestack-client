@@ -22,6 +22,7 @@ export default React.createClass({
     return(
           <tr className="user-skill" id={this.props.id}>
             <th>{this.props.skillName}</th>
+            <td>{this.props.difficulty}</td>
             <td>{this.props.status}</td>
             <td>{this.props.skillXp}</td>
           </tr>
