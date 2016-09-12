@@ -57,14 +57,14 @@ export const getUserDetails = (id) => {
   }
 }
 
-export const uploadShowcase = (skill_id, showcaseUrl) => {
+export const uploadShowcase = (skill_id, tutorialUrl) => {
   return function (dispatch, getState) {
     const id = getState().user.id
     request
-      .put(`${url}/v1/users/${id}/showcase`)
+      .put(`${url}/v1/users/${id}/tutorial`)
       .send({
         skill_id: skill_id,
-        showcase: showcaseUrl
+        tutorial: tutorialUrl
       })
       .end((err, res) => {
         if (err) {
