@@ -7,12 +7,11 @@ export default React.createClass({
     skillName: React.PropTypes.string.isRequired,
     status: React.PropTypes.string.isRequired,
     skillXp: React.PropTypes.number.isRequired,
-    onClickUpload: React.PropTypes.func.isRequired,
-    showcaseUrl: React.PropTypes.string.isRequired
+    onClickUpload: React.PropTypes.func.isRequired
   },
   getInitialState() {
     return {
-      url: "Showcase your learned skill!"
+      url: ""
     }
   },
   onInputChange(evt) {
@@ -24,6 +23,7 @@ export default React.createClass({
     return(
           <tr className="user-skill" id={this.props.id}>
             <th>{this.props.skillName}</th>
+            <td>{this.props.difficulty}</td>
             <td>{this.props.status}</td>
             <td>{this.props.skillXp}</td>
             <td><TwitterButton url="http://localhost:5000/#/search" text={`I've just learned ${this.props.skillName} #adulting # lifestack`} /></td>
