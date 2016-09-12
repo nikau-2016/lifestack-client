@@ -6,7 +6,8 @@ import {upVote, downVote, changeStatus} from '../actions'
 
 const mapStateToProps = (state) => {
   return {
-    skill: state.search
+    skill: state.search,
+    userId: state.user.id
   }
 }
 
