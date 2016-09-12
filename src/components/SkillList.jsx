@@ -23,6 +23,7 @@ export default React.createClass({
     })
   },
   render() {
+    console.log(this.props.skillList)
     const skillList = this.props.skillList.map((elem) => {
       return <UserSkill
               key={elem.id}
@@ -30,7 +31,9 @@ export default React.createClass({
               skillName={elem.skillName}
               status={elem.status}
               skillXp={elem.skillXp}
-              onClickUpload={this.props.onClickUpload} />
+              difficulty={elem.difficulty}
+              onClickUpload={this.props.onClickUpload}
+              showcaseURL={elem.showcaseURL} />
     })
 
     const options = this.props.skillList.map((elem, i) => {

@@ -17,8 +17,8 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(getUserDetails(id))
     },
     onClickUpload: (skill_id, tutorialUrl) => {
-      console.log(skill_id, tutorialUrl)
       dispatch(uploadShowcase(skill_id, tutorialUrl))
+    },
     onRandomSkill: (user_id) => {
       dispatch(getRandom(user_id))
     },
