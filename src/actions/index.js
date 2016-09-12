@@ -142,3 +142,23 @@ const resetUser = () => {
     type: 'RESET_USER'
   }
 }
+
+const updateRandom = (random) => {
+  return {
+    type: 'UPDATE_RANDOM',
+    random: random
+  }
+}
+
+export const getRandom = (id) => {
+  return (dispatch) => {
+    request
+      .get(`http://localhost:3000/v1/users/${id}/random`)
+      .end((err, res) => {
+        if (err || !res.body.data) {
+          return
+        }
+          dispatch(updateRandom(res.body.data))
+      })
+  }
+}
