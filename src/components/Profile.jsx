@@ -17,13 +17,16 @@ export default React.createClass({
       this.props.onLoad(this.props.params.id)
       this.props.onRandomSkill(this.props.params.id)
     },
+    getRandom() {
+      this.props.onRandomSkill(this.props.params.id)
+    },
     render () {
         return (
             <div className="profile">
                 <div>
                   Want to learn {this.props.randomSkill.skillName}? <br />
                   <span id={this.props.randomSkill.id} onClick={this.props.onSkill}>YES!</span><br />
-                  <span id={this.props.user.id} onClick={this.props.onRandomSkill}>Show me another skill</span>
+                  <span onClick={this.getRandom}>Show me another skill</span>
                 </div>
                 <UserDetail id={this.props.user.id}
                     username={this.props.user.username}
