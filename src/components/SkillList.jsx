@@ -43,6 +43,7 @@ export default React.createClass({
         <select
           value={this.state.skill_id}
           onChange={this.onSelect}>
+          <option value="">Select a skill</option>
           {options}
         </select>
 
