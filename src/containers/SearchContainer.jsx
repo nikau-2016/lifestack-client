@@ -2,11 +2,12 @@ import React from 'react'
 import SkillVideo from '../components/SkillVideo'
 import SearchPage from '../components/SearchPage'
 import {connect} from 'react-redux'
-import {upVote, downVote, changeStatus} from '../actions'
+import {upVote, downVote, changeStatus, retrieveSkill} from '../actions'
 
 const mapStateToProps = (state) => {
   return {
-    skill: state.search
+    skill: state.search,
+    userId: state.user.id
   }
 }
 
@@ -20,6 +21,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     onDownvote: (evt) => {
       dispatch(downVote(evt.target.id))
+    },
+    onSelected: (selected) => {
+      dispatch(retrieveSkill(selected))
     }
   }
 }
