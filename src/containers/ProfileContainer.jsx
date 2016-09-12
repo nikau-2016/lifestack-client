@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 
 import Profile from '../components/Profile'
-import {getUserDetails} from '../actions'
+import {getUserDetails, uploadShowcase} from '../actions'
 
 const mapStateToProps = (state) => {
   return {
@@ -14,6 +14,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onLoad: (id) => {
       dispatch(getUserDetails(id))
+    },
+    onClickUpload: (skill_id, showcaseUrl) => {
+      dispatch(uploadShowcase(skill_id, showcaseUrl))
     }
   }
 }

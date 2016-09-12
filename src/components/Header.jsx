@@ -1,78 +1,50 @@
 import React from 'react'
 import {Link} from 'react-router'
-import Dropdown from 'react-dropdown'
-import request from 'superagent'
 
 export default React.createClass({
   props: {
-    onSkillSelect: React.PropTypes.func.isRequired,
-    onLogin: React.PropTypes.func.isRequired,
-    onRegister: React.PropTypes.func.isRequired,
-    onProfile: React.PropTypes.func.isRequired
-  },
-  getInitialState () {
-    return {
-      options: [],
-      username: "",
-      password: ""
-    }
-  },
-  componentDidMount () {
-    request
-      .get("http://localhost:3000/v1/skills")
-      .end((err, res) => {
-        if (err) {
-          return
-        }
-        this.setState({options: createOptions(res.body.data)})
-      })
-  },
-  onClickLogin () {
-    this.props.onLogin(this.state.username, this.state.password)
-    this.setState({username: "", password: ""})
+    onLogout: React.PropTypes.func.isRequired,
+    onProfile: React.PropTypes.func.isRequired,
+    userId: React.PropTypes.number.isRequired
   },
   render () {
-    return (
-      <div>
-        <header>
-          <h1 class ="heading"><Link to={'/'}>#ADULTING</Link></h1>
-          <a href="http://localhost:3000/auth/twitter">Sign Up with Twitter</a>
-          <button onClick={this.props.onProfile}>Profile</button>
-          <div>
-            <Dropdown options={this.state.options} onChange={this.props.onSkillSelect}
-            value={this.state.options[0]} placeholder="Select an option" />
-          </div>
-        </header>
+    if (this.props.userId === 0) {
+      return (
         <div>
-          {this.props.children}
+          <header>
+            <h1><Link to={'/'}>#ADULTING</Link></h1>
+            <Link to={'/search'}>Search</Link>
+            <a href="http://localhost:3000/auth/twitter">Log in with Twitter</a>
+          </header>
+          <div>
+            {this.props.children}
+          </div>
         </div>
-      </div>
-    )
+      )
+    } else {
+      return (
+        <div>
+          <header>
+            <h1><Link to={'/'}>#ADULTING</Link></h1>
+            <Link to={'/search'}>Search</Link>
+            <button onClick={this.props.onProfile}>Profile</button>
+            <button onClick={this.props.onLogout}>Logout</button>
+          </header>
+          <div>
+            {this.props.children}
+          </div>
+        </div>
+      )
+    }
   }
 })
 
-function createOptions (data) {
-    const dropdown = data.map(elem => elem.category)
-                         .filter((elem, i, ar) => ar.indexOf(elem) === i)
-                         .map(elem => makeCategory(elem))
-
-    data.forEach(elem => {
-        dropdown.forEach((category, i) => {
-            if (elem.category === category.name) {
-                dropdown[i].items.push(makeOption(elem.id, elem.skillName))
-            }
-        })
-    })
-
-    return [{ value: '0', label: 'Select a skill' }, ...dropdown]
-}
-
-function makeCategory (categoryName) {
-    return {
-        type: 'group', name: categoryName, items: []
-    }
-}
-
-function makeOption (id, skillName) {
-    return { value: id, label: skillName}
-}
+//
+//                                       888               888
+//                                       888               888
+//                                       888               888
+//  888  888  888  .d88b.  88888b.d88b.  88888b.   8888b.  888888
+//  888  888  888 d88""88b 888 "888 "88b 888 "88b     "88b 888
+//  888  888  888 888  888 888  888  888 888  888 .d888888 888
+//  Y88b 888 d88P Y88..88P 888  888  888 888 d88P 888  888 Y88b.
+//    "Y8888888P"  "Y88P"  888  888  888 88888P"  "Y888888  "Y888

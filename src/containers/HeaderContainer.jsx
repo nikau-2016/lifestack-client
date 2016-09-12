@@ -1,20 +1,23 @@
 import React from 'react'
 import Header from '../components/Header'
 import {connect} from 'react-redux'
-import {retrieveSkill, displayProfile} from '../actions'
+import {logout, displayProfile} from '../actions'
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onSkillSelect: (evt) => {
-      dispatch(retrieveSkill(evt.value))
-    },
-    onLogin: (username, password) => {
-      dispatch(login(username, password))
-    },
     onProfile: () => {
       dispatch(displayProfile())
+    },
+    onLogout: (userId) => {
+      dispatch(logout(userId))
     }
   }
 }
 
-export default connect(undefined, mapDispatchToProps)(Header)
+const mapStateToProps = (state) => {
+  return {
+    userId: state.user.id
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header)
