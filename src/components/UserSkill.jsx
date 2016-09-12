@@ -1,4 +1,5 @@
 import React from 'react'
+import {TwitterButton} from 'react-social-buttons'
 
 export default React.createClass({
   props: {
@@ -25,6 +26,18 @@ export default React.createClass({
             <td>{this.props.difficulty}</td>
             <td>{this.props.status}</td>
             <td>{this.props.skillXp}</td>
+            <td><TwitterButton url="http://localhost:5000/#/search" text={`I've just learned ${this.props.skillName} #adulting # lifestack`} /></td>
+            <td>
+              <input
+                type="text"
+                placeholder="Showcase your learned skill!"
+                value={this.props.showcaseUrl}
+                onChange={this.onInputChange} />
+              <button
+                type="button"
+                onClick={() => this.props.onClickUpload(this.props.id, this.state.url)}>
+              Upload</button>
+            </td>
           </tr>
     )
   }
