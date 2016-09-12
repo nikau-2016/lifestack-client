@@ -13,7 +13,7 @@ export default React.createClass({
         userId: React.PropTypes.number.isRequired,
         onLoad: React.PropTypes.func.isRequired
     },
-    componentDidMount () {
+    componentWillMount () {
       request
       .get("http://localhost:3000/v1/skills")
       .end((err, res) => {
@@ -21,7 +21,6 @@ export default React.createClass({
           return
         }
         this.setState({options: res.body.data})
-        this.props.onLoad(res.body.data[0].id)
       })
     },
     getInitialState () {
@@ -33,6 +32,7 @@ export default React.createClass({
       if (this.props.userId === 0) {
         return (
           <section>
+            <p>Select a skill and start watching tutorials</p>
             <Searchbar options={this.state.options} onSelected={this.props.onSelected}/>
             <h1>{this.props.skill.skillName}</h1>
             <div className="category">{this.props.skill.category}</div>
@@ -46,6 +46,7 @@ export default React.createClass({
       } else {
         return (
           <section>
+            <p>Select a skill and start watching tutorials</p>
             <Searchbar options={this.state.options} onSelected={this.props.onSelected}/>
             <h1>{this.props.skill.skillName}</h1>
             <div className="category">{this.props.skill.category}</div>
