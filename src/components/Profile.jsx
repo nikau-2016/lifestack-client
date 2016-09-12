@@ -2,7 +2,6 @@ import React from 'react'
 import UserDetail from './UserDetail'
 import SkillList from './SkillList'
 import UserGame from './UserGame'
-import Twitter from './Twitter'
 
 export default React.createClass({
     props: {
@@ -25,7 +24,6 @@ export default React.createClass({
                     remainingXp ={this.props.user.remainingXp} />
                 <SkillList skillList={this.props.user.skillList}
                            onClickUpload={this.props.onClickUpload} />
-                         <Twitter />
             </div>
         )
     }
