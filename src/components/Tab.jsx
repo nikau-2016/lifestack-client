@@ -4,11 +4,14 @@ import SkillVideo from './SkillVideo'
 
 export default React.createClass({
   props: {
+    skillId: React.PropTypes.number.isRequired,
     videos: React.PropTypes.array.isRequired,
     onUpvote: React.PropTypes.func.isRequired,
-    onDownvote: React.PropTypes.func.isRequired
+    onDownvote: React.PropTypes.func.isRequired,
+    onWatchedSkill: React.PropTypes.func.isRequired
   },
   render () {
+    console.log(this.props.skillId)
     const videos = (this.props.videos || [])
       .sort((a, b) => a.votes < b.votes)
       .map(elem => {
@@ -19,11 +22,21 @@ export default React.createClass({
                     onUpvote={this.props.onUpvote}
                     onDownvote={this.props.onDownvote} />
     })
-
-    return (
-      <div className="tab">
-        {videos}
-      </div>
-    )
+    if (this.props.userId === 0) {
+      return (
+        <div className="tab">
+          {videos}
+        </div>
+      )
+    } else {
+      return (
+        <div className="tab">
+        <button
+        name={this.props.skillId}
+        onClick={this.props.onWatchedSkill}>Got It!</button>
+          {videos}
+        </div>
+      )
+    }
   }
 })
