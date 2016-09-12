@@ -11,7 +11,6 @@ export default React.createClass({
     onWatchedSkill: React.PropTypes.func.isRequired
   },
   render () {
-    console.log(this.props.skillId)
     const videos = (this.props.videos || [])
       .sort((a, b) => a.votes < b.votes)
       .map(elem => {
@@ -22,7 +21,7 @@ export default React.createClass({
                     onUpvote={this.props.onUpvote}
                     onDownvote={this.props.onDownvote} />
     })
-    if (this.props.userId === 0) {
+    if (this.props.userId === 0 || (this.props.userId !==0 && !this.props.skillId)) {
       return (
         <div className="tab">
           {videos}
