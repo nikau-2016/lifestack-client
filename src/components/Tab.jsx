@@ -14,7 +14,7 @@ export default React.createClass({
     }
   },
   render () {
-    const videos = this.props.videos
+    const videos = (this.props.videos || [])
       .filter(elem => {
         return elem.type === this.state.currentTab
       })
