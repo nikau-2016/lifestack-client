@@ -155,10 +155,10 @@ export const getRandom = (id) => {
     request
       .get(`http://localhost:3000/v1/users/${id}/random`)
       .end((err, res) => {
-        if (err) {
+        if (err || !res.body.data) {
           return
         }
-        dispatch(updateRandom(res.body.data))
+          dispatch(updateRandom(res.body.data))
       })
   }
 }
