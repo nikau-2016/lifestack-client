@@ -33,7 +33,7 @@ export default React.createClass({
           <section>
             <Searchbar options={this.state.options} onSelected={this.props.onSelected}/>
             <h1>{this.props.skill.skillName}</h1>
-            <div className="categogy">{this.props.skill.category}</div>
+            <div className="category">{this.props.skill.category}</div>
             <div className="difficulty">{this.props.skill.difficulty}</div>
             <Tab
               onUpvote={this.props.onUpvote}
@@ -46,7 +46,7 @@ export default React.createClass({
           <section>
             <Searchbar options={this.state.options} onSelected={this.props.onSelected}/>
             <h1>{this.props.skill.skillName}</h1>
-            <div className="categogy">{this.props.skill.category}</div>
+            <div className="category">{this.props.skill.category}</div>
             <div className="difficulty">{this.props.skill.difficulty}</div>
             <button
             name={this.props.skill.id}
