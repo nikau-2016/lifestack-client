@@ -24,6 +24,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     onSelected: (selected) => {
       dispatch(retrieveSkill(selected))
+    },
+    onLoad: (id) => {
+      dispatch(retrieveSkill(id))
     }
   }
 }

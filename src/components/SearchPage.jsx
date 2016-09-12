@@ -10,7 +10,8 @@ export default React.createClass({
         onWatchedSkill: React.PropTypes.func.isRequired,
         onUpvote: React.PropTypes.func.isRequired,
         onDownvote: React.PropTypes.func.isRequired,
-        userId: React.PropTypes.number.isRequired
+        userId: React.PropTypes.number.isRequired,
+        onLoad: React.PropTypes.func.isRequired
     },
     componentDidMount () {
       request
@@ -20,6 +21,7 @@ export default React.createClass({
           return
         }
         this.setState({options: res.body.data})
+        this.props.onLoad(res.body.data[0].id)
       })
     },
     getInitialState () {
