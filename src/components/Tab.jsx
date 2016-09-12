@@ -8,16 +8,8 @@ export default React.createClass({
     onUpvote: React.PropTypes.func.isRequired,
     onDownvote: React.PropTypes.func.isRequired
   },
-  getInitialState () {
-    return {
-      currentTab: "tutorial"
-    }
-  },
   render () {
     const videos = (this.props.videos || [])
-      .filter(elem => {
-        return elem.type === this.state.currentTab
-      })
       .sort((a, b) => a.votes < b.votes)
       .map(elem => {
         return <SkillVideo key={elem.id}
@@ -30,12 +22,6 @@ export default React.createClass({
 
     return (
       <div className="tab">
-      <button onClick={() => this.setState({currentTab:"tutorial"})}>
-        Tutorials
-      </button>
-      <button onClick={() => this.setState({currentTab:"showcase"})}>
-        Showcases
-      </button>
         {videos}
       </div>
     )
