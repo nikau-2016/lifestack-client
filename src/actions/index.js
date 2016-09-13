@@ -57,6 +57,21 @@ export const getUserDetails = (id) => {
   }
 }
 
+export const getContributorDetails = (id) => {
+  return function (dispatch) {
+    request
+      .get(`${url}/v1/users/${id}`)
+      .end((err, res) => {
+        if (err) {
+          // ERROR HANDLING HERE
+          console.log(err)
+        } else {
+          dispatch(setContributor(res.body.data))
+        }
+      })
+  }
+}
+
 export const uploadShowcase = (skill_id, tutorialUrl) => {
   return function (dispatch, getState) {
     const id = getState().user.id
@@ -81,6 +96,13 @@ const setUser = (user) => {
   return {
     type: "SET_USER",
     user: user
+  }
+}
+
+const setContributor = (contributor) => {
+  return {
+    type: "SET_CONTRIBUTOR",
+    contributor: contributor
   }
 }
 

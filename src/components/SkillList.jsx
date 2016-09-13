@@ -32,8 +32,7 @@ export default React.createClass({
     })
   },
   render() {
-    console.log(this.props.skillList)
-    const skillList = this.props.skillList.map((elem) => {
+      const skillList = this.props.skillList.map((elem) => {
       return <UserSkill
               key={elem.id}
               id={elem.id}
@@ -73,6 +72,13 @@ export default React.createClass({
 
         <table>
           <thead>
+            <tr>
+              <th>Skill</th>
+              <th>Difficulty</th>
+              <th>Status</th>
+              <th>XP</th>
+              <th>Tutorial</th>
+            </tr>
           </thead>
           <tbody>
             {skillList}

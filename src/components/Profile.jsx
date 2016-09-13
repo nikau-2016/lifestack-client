@@ -2,7 +2,6 @@ import React from 'react'
 import UserDetail from './UserDetail'
 import SkillList from './SkillList'
 import UserGame from './UserGame'
-import request from 'superagent'
 
 export default React.createClass({
     props: {
@@ -23,7 +22,7 @@ export default React.createClass({
     },
     render () {
         return (
-            <div className="profile">
+            <div className="user-profile">
                 <div>
                   Want to learn {this.props.randomSkill.skillName}? <br />
                   <span id={this.props.randomSkill.id} onClick={this.props.onSkill}>YES!</span><br />

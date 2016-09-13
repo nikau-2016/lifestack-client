@@ -12,6 +12,7 @@ import HeaderContainer from './containers/HeaderContainer'
 import Home from './components/Home'
 import SearchContainer from './containers/SearchContainer'
 import ProfileContainer from './containers/ProfileContainer'
+import ContributorContainer from './containers/ContributorContainer'
 
 let store = createStore(reducers,
   compose(
@@ -27,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <Route path='/search' component={SearchContainer} />
           <Route path='/search/:id' component={SearchContainer} />
           <Route path='/profile/:id' component={ProfileContainer} />
+          <Route path='/contributor/:id' component={ContributorContainer} />
         </Route>
       </Router>
     </Provider>,
