@@ -13,7 +13,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     onLoad: (id) => {
-      console.log('in container', id)
       dispatch(getContributorDetails(id))
     }
   }

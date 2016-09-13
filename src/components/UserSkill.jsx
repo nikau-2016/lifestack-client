@@ -13,7 +13,7 @@ export default React.createClass({
     if (this.props.showcaseURL) {
       return (
             <tr className="user-skill" id={this.props.id}>
-              <th>{this.props.skillName}</th>
+              <td>{this.props.skillName}</td>
               <td>{this.props.difficulty}</td>
               <td>{this.props.status}</td>
               <td>{this.props.skillXp}</td>
@@ -28,7 +28,7 @@ export default React.createClass({
     } else {
       return (
             <tr className="user-skill" id={this.props.id}>
-              <th>{this.props.skillName}</th>
+              <td>{this.props.skillName}</td>
               <td>{this.props.difficulty}</td>
               <td>{this.props.status}</td>
               <td>{this.props.skillXp} XP</td>

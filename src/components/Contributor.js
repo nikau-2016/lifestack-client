@@ -12,17 +12,16 @@ export default React.createClass({
       this.props.onLoad(this.props.params.id)
     },
     render () {
-      let skillList = []
-      if (this.props.contributor.skillList) {
-        skillList = this.props.contributor.skillList.map(elem => {
-          return <tr className="contributor-skill" id={this.props.id}>
-          <th>{this.props.skillName}</th>
-          <td>{this.props.difficulty}</td>
-          <td>{this.props.status}</td>
-          <td>{this.props.skillXp}</td>
+      console.log('contributor', this.props.contributor.skillList)
+      const skillList = this.props.contributor.skillList.map(elem => {
+          return <tr key={elem.id} className="contributor-skill" id={elem.id}>
+          <td>{elem.skillName}</td>
+          <td>{elem.difficulty}</td>
+          <td>{elem.status}</td>
+          <td>{elem.skillXp}</td>
           </tr>
         })
-      }
+
         return (
             <div className="contributor-profile">
                 <UserDetail id={this.props.contributor.id}
