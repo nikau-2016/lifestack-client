@@ -12,6 +12,7 @@ export default React.createClass({
     onWatchedSkill: React.PropTypes.func.isRequired
   },
   render () {
+    console.log(this.props.videos)
     const videos = (this.props.videos || [])
       .sort((a, b) => a.votes < b.votes)
       .map(elem => {
