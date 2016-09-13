@@ -1,5 +1,6 @@
 const initialState = {
   id: 0,
+  twitter_id: "",
   username: "0",
   profile_pic: "",
   level: 0,

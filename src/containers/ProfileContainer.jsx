@@ -26,7 +26,7 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(retrieveSkill(evt.target.id))
     },
     onDelete: (evt) => {
-        dispatch(deleteVideo(evt.target.id))
+      dispatch(deleteVideo(evt.target.id))
     }
   }
 }

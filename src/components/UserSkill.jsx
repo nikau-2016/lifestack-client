@@ -8,10 +8,13 @@ export default React.createClass({
     status: React.PropTypes.string.isRequired,
     skillXp: React.PropTypes.number.isRequired,
     showcaseURL: React.PropTypes.string.isRequired,
+    video: React.PropTypes.number.isRequired,
     onDelete: React.PropTypes.func.isRequired
   },
   render() {
-    if (this.props.showcaseURL) {
+    console.log(this.props.video)
+    if (this.props.showcaseURL && this.props.video[0]) {
+      console.log('in render', this.props.video[0].video_id)
       return (
             <tr className="user-skill" id={this.props.id}>
               <td><span onClick={this.props.onSkill} id={this.props.id} name={this.props.showcaseURL}>
@@ -25,6 +28,7 @@ export default React.createClass({
                     <img id={this.props.id}
                                className="deletebutton"
                                src="./images/del32.png"
+                               id={this.props.video[0].video_id}
                                onClick={this.props.onDelete} />
               </td>
               <td>

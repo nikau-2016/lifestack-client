@@ -43,7 +43,8 @@ export default React.createClass({
               onClickUpload={this.props.onClickUpload}
               onSkill={this.props.onSkill}
               onDelete={this.props.onDelete}
-              showcaseURL={elem.showcaseURL} />
+              showcaseURL={elem.showcaseURL}
+              video={elem.video} />
     })
 
     const options = this.props.skillList.map((elem, i) => {
