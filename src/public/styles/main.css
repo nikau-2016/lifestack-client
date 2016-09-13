@@ -1,6 +1,6 @@
 body {
   font-family: 'Baloo Tamma', cursive;
-  margin-top: 10px;
+  margin: 0;
   display:block;
   flex-direction: column;
   align-items:center;
@@ -22,12 +22,13 @@ header {
   position:fixed;
   font-family: 'Baloo Tamma', cursive;
   text-decoration: none;
-  border-radius: 5px;
   background-color:#6AD4F7;
   display:block;
-  margin:0,auto;
   text-align: center;
   width:100%;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 .banner-image {
@@ -64,16 +65,27 @@ h1 {
 
 .About {
   display:inline-grid;
-  margin:0,auto;
+  margin:0 auto;
   text-align: center;
   padding-top: 80px;
   padding-bottom:100px;
   font-size: 20px;
+  max-width: 800px;
 }
 
-.top-video {
+.top-videos {
   display:block;
-  margin:0,auto;
+  margin:0 auto;
+  text-align: center;
+}
+
+.top-videos div {
+  display: inline-block;
+  margin: 0 6px;
+}
+
+iframe {
+  border: 0;
 }
 
 a {
