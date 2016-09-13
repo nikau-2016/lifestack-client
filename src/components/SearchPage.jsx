@@ -5,6 +5,7 @@ import Searchbar from './Searchbar'
 
 export default React.createClass({
     props: {
+        params: React.PropTypes.object.isRequired,
         skill: React.PropTypes.object.isRequired,
         onSelected: React.PropTypes.func.isRequired,
         onWatchedSkill: React.PropTypes.func.isRequired,
@@ -22,6 +23,11 @@ export default React.createClass({
         }
         this.setState({options: res.body.data})
       })
+
+      if (this.props.params.id) {
+        console.log(this.props.params)
+        this.props.onSelected(this.props.params.id)
+      }
     },
     getInitialState () {
       return {

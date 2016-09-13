@@ -19,7 +19,7 @@ export default React.createClass({
             <td>{this.props.showcaseURL}</td>
             <td>
               <TwitterButton
-                url="http://localhost:5000/#/search"
+                url={`http://localhost:5000/#/search/${this.props.id}`}
                 text={`I've just learned ${this.props.skillName} #adulting # lifestack`} />
             </td>
           </tr>
