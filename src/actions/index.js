@@ -122,6 +122,22 @@ export const downVote = (video_id) => {
   }
 }
 
+export const deleteVideo = (video_id) => {
+    return (dispatch, getState) => {
+      const id = getState().search.id
+      request
+        .del(`${url}/v1/videos/${video_id}`)
+        .end((err, res) => {
+          if (err) {
+            // ERROR HANDLING HERE
+            console.log(err)
+          } else {
+            dispatch(updateSearch(res.body.data))
+          }
+        })
+    }
+  }
+
 export const logout = (userId) => {
   return (dispatch) => {
     request

@@ -33,7 +33,9 @@ export default React.createClass({
                  onClick={this.props.onDownvote} />
           </div>
           <p className="votes">{this.props.votes} votes</p>
+          <button onClick={this.props.onSkill} id={this.props.id} name={this.props.showcaseURL}>Delete</button>
         </div>
+
       )
     }
   }
