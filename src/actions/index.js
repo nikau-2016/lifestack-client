@@ -21,7 +21,7 @@ export const retrieveSkill = (id) => {
           console.log(err)
         } else {
           dispatch(updateSearch(res.body.data))
-          dispatch(push('/search'))
+          dispatch(push(`/search/${id}`))
         }
       })
   }
@@ -57,14 +57,14 @@ export const getUserDetails = (id) => {
   }
 }
 
-export const uploadShowcase = (skill_id, showcaseUrl) => {
+export const uploadShowcase = (skill_id, tutorialUrl) => {
   return function (dispatch, getState) {
     const id = getState().user.id
     request
-      .put(`${url}/v1/users/${id}/showcase`)
+      .put(`${url}/v1/users/${id}/tutorial`)
       .send({
         skill_id: skill_id,
-        showcase: showcaseUrl
+        tutorial: tutorialUrl
       })
       .end((err, res) => {
         if (err) {
@@ -140,5 +140,25 @@ export const logout = (userId) => {
 const resetUser = () => {
   return {
     type: 'RESET_USER'
+  }
+}
+
+const updateRandom = (random) => {
+  return {
+    type: 'UPDATE_RANDOM',
+    random: random
+  }
+}
+
+export const getRandom = (id) => {
+  return (dispatch) => {
+    request
+      .get(`http://localhost:3000/v1/users/${id}/random`)
+      .end((err, res) => {
+        if (err || !res.body.data) {
+          return
+        }
+          dispatch(updateRandom(res.body.data))
+      })
   }
 }

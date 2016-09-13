@@ -5,14 +5,16 @@ import Searchbar from './Searchbar'
 
 export default React.createClass({
     props: {
+        params: React.PropTypes.object.isRequired,
         skill: React.PropTypes.object.isRequired,
         onSelected: React.PropTypes.func.isRequired,
         onWatchedSkill: React.PropTypes.func.isRequired,
         onUpvote: React.PropTypes.func.isRequired,
         onDownvote: React.PropTypes.func.isRequired,
-        userId: React.PropTypes.number.isRequired
+        userId: React.PropTypes.number.isRequired,
+        onLoad: React.PropTypes.func.isRequired
     },
-    componentDidMount () {
+    componentWillMount () {
       request
       .get("http://localhost:3000/v1/skills")
       .end((err, res) => {
@@ -21,6 +23,10 @@ export default React.createClass({
         }
         this.setState({options: res.body.data})
       })
+
+      if (this.props.params.id) {
+        this.props.onSelected(this.props.params.id)
+      }
     },
     getInitialState () {
       return {
@@ -28,33 +34,20 @@ export default React.createClass({
       }
     },
     render () {
-      if (this.props.userId === 0) {
-        return (
-          <section>
-            <Searchbar options={this.state.options} onSelected={this.props.onSelected}/>
-            <h1>{this.props.skill.skillName}</h1>
-            <h3>{this.props.skill.category}</h3>
-            <Tab
-              onUpvote={this.props.onUpvote}
-              onDownvote={this.props.onDownvote}
-              videos={this.props.skill.videos} />
-          </section>
-        )
-      } else {
-        return (
-          <section>
-            <Searchbar options={this.state.options} onSelected={this.props.onSelected}/>
-            <h1>{this.props.skill.skillName}</h1>
-            <h3>{this.props.skill.category}</h3>
-            <button
-            name={this.props.skill.id}
-            onClick={this.props.onWatchedSkill}>Got It!</button>
-            <Tab
-              onUpvote={this.props.onUpvote}
-              onDownvote={this.props.onDownvote}
-              videos={this.props.skill.videos} />
-          </section>
-        )
-      }
+      return (
+        <section>
+          <Searchbar options={this.state.options} onSelected={this.props.onSelected}/>
+          <h1>{this.props.skill.skillName}</h1>
+          <div className="category">{this.props.skill.category}</div>
+          <div className="difficulty">{this.props.skill.difficulty}</div>
+          <Tab
+            userId={this.props.userId}
+            skillId={this.props.skill.id}
+            onUpvote={this.props.onUpvote}
+            onDownvote={this.props.onDownvote}
+            onWatchedSkill={this.props.onWatchedSkill}
+            videos={this.props.skill.videos} />
+       </section>
+      )
     }
 })

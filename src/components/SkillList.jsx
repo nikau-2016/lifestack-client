@@ -4,7 +4,31 @@ import UserSkill from './UserSkill'
 export default React.createClass({
   props: {
     skillList: React.PropTypes.array.isRequired,
+    onSkill: React.PropTypes.func.isRequired,
     onClickUpload: React.PropTypes.func.isRequired
+  },
+  getInitialState() {
+    return {
+      url: "",
+      skill_id: null
+    }
+  },
+  onInputChange(evt) {
+    this.setState({
+      url: evt.target.value
+    })
+  },
+  onSelect(evt){
+    this.setState({
+      skill_id: evt.target.value
+    })
+  },
+  onUploadSubmit () {
+    this.props.onClickUpload(this.state.skill_id, this.state.url)
+
+    this.setState({
+      url: ""
+    })
   },
   render() {
     const skillList = this.props.skillList.map((elem) => {
@@ -14,10 +38,36 @@ export default React.createClass({
               skillName={elem.skillName}
               status={elem.status}
               skillXp={elem.skillXp}
-              onClickUpload={this.props.onClickUpload} />
+              difficulty={elem.difficulty}
+              onClickUpload={this.props.onClickUpload}
+              onSkill={this.props.onSkill}
+              showcaseURL={elem.showcaseURL} />
+    })
+
+    const options = this.props.skillList.map((elem, i) => {
+      return <option key={i} value={elem.id}>{elem.skillName}</option>
     })
     return(
       <div className="skill-list">
+        <select
+          value={this.state.skill_id || ""}
+          onChange={this.onSelect}>
+          <option value="">Select a skill</option>
+          {options}
+        </select>
+
+        <input
+          type="text"
+          placeholder="Upload a tutorial!"
+          value={this.state.url}
+          onChange={this.onInputChange} />
+
+        <button
+          type="button"
+          onClick={this.onUploadSubmit}>
+        Upload</button>
+
+
         <table>
           <thead>
           </thead>
