@@ -3,6 +3,10 @@ import request from 'superagent'
 import Tab from './Tab'
 import Searchbar from './Searchbar'
 
+const env = process.env.NODE_ENV || 'development'
+const url = env === 'production' ? 'https://adulting-server.herokuapp.com'
+                                    :'http://localhost:3000'
+
 export default React.createClass({
     props: {
         params: React.PropTypes.object.isRequired,
@@ -16,7 +20,7 @@ export default React.createClass({
     },
     componentWillMount () {
       request
-      .get("http://localhost:3000/v1/skills")
+      .get(`${url}/v1/skills`)
       .end((err, res) => {
         if (err) {
           return
