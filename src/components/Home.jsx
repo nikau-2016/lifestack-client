@@ -1,5 +1,6 @@
 import React from 'react'
 import TopVideos from './TopVideos'
+import { Timeline } from 'react-twitter-widgets'
 
 export default React.createClass({
     getInitialState () {
@@ -13,6 +14,12 @@ export default React.createClass({
                 <img className="banner-image" src="styles/images/group-of-millenials.jpg"></img>
                 <section className="mission-statement"> "Life skills for millenials"<br></br>Whether you need to fix, build, create or learn<br></br>Lifestack gives you practical solutions<br></br> to the problems life throws at you.<br />
                 </section>
+                <Timeline
+                  widgetId={'775532588731478016'}
+                  options={{
+                    height: '400'
+                  }}
+                />
                 <section className="About">
                     We empower you to efficiently solve each new challenge and make your life better and easier.
                     Content made by real people for real people. We are a bunch of passionate,
