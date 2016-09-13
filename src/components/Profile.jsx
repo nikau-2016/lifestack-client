@@ -35,6 +35,7 @@ export default React.createClass({
                     totalXp ={this.props.user.totalXp}
                     remainingXp ={this.props.user.remainingXp} />
                 <SkillList skillList={this.props.user.skillList}
+                           onSkill={this.props.onSkill}
                            onClickUpload={this.props.onClickUpload} />
             </div>
         )
