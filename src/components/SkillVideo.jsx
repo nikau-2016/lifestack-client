@@ -26,13 +26,11 @@ export default React.createClass({
             <img id={this.props.video.id}
                  className="upvote"
                  src="./images/up.png"
-                 value={this.props.userId}
                  onClick={this.props.onUpvote} />
 
             <img id={this.props.video.id}
                  className="downvote"
                  src="./images/down.png"
-                 value={this.props.userId}
                  onClick={this.props.onDownvote} />
           </div>
           <p className="votes">{this.props.video.votes} votes</p>

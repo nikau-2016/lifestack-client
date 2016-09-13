@@ -17,10 +17,10 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(changeStatus(evt.target.name, "watched"))
     },
     onUpvote: (evt) => {
-      dispatch(upVote(evt.target.id, evt.target.value))
+      dispatch(upVote(evt.target.id))
     },
     onDownvote: (evt) => {
-      dispatch(downVote(evt.target.id, evt.target.value))
+      dispatch(downVote(evt.target.id))
     },
     onSelected: (selected) => {
       dispatch(retrieveSkill(selected))
