@@ -1,5 +1,6 @@
 import React from 'react'
 import SkillVideo from './SkillVideo'
+import ReactDisqusThread from 'react-disqus-thread'
 
 
 export default React.createClass({
@@ -55,6 +56,11 @@ export default React.createClass({
           name={this.props.skillId}
           onClick={this.props.onWatchedSkill}>Got It!</button>
             {videos}
+            <ReactDisqusThread
+            shortname="hashtagadulting-co-nz"
+            identifier={this.props.skillId}
+            title="Post your comments here"
+            url={`http://localhost:5000/search/${this.props.skillId}`}/>
           </div>
         )
       }
