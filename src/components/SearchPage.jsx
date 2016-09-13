@@ -25,7 +25,6 @@ export default React.createClass({
       })
 
       if (this.props.params.id) {
-        console.log(this.props.params)
         this.props.onSelected(this.props.params.id)
       }
     },
