@@ -12,9 +12,7 @@ export default React.createClass({
     onDelete: React.PropTypes.func.isRequired
   },
   render() {
-    console.log(this.props.video)
     if (this.props.showcaseURL && this.props.video[0]) {
-      console.log('in render', this.props.video[0].video_id)
       return (
             <tr className="user-skill" id={this.props.id}>
               <td><span onClick={this.props.onSkill} id={this.props.id} name={this.props.showcaseURL}>
