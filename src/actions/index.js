@@ -21,7 +21,7 @@ export const retrieveSkill = (id) => {
           console.log(err)
         } else {
           dispatch(updateSearch(res.body.data))
-          dispatch(push('/search'))
+          dispatch(push(`/search/${id}`))
         }
       })
   }

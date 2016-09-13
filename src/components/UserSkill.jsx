@@ -20,7 +20,7 @@ export default React.createClass({
               <td><button onClick={this.props.onSkill} id={this.props.id} name={this.props.showcaseURL}>Tutorial</button></td>
               <td>
                 <TwitterButton
-                  url="http://localhost:5000/#/search"
+                  url={`http://localhost:5000/#/search/${this.props.id}`}
                   text={`I've just learned ${this.props.skillName} #adulting # lifestack`} />
               </td>
             </tr>
@@ -35,7 +35,7 @@ export default React.createClass({
               <td></td>
               <td>
                 <TwitterButton
-                  url="http://localhost:5000/#/search"
+                  url={`http://localhost:5000/#/search/${this.props.id}`}
                   text={`I've just learned ${this.props.skillName} #adulting # lifestack`} />
               </td>
             </tr>
