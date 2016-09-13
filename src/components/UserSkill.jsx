@@ -1,6 +1,10 @@
 import React from 'react'
 import {TwitterButton} from 'react-social-buttons'
 
+const env = process.env.NODE_ENV || 'development'
+const clientURL = env === 'production' ? 'https://adulting.herokuapp.com/'
+                                    :'http://localhost:5000'
+
 export default React.createClass({
   props: {
     id: React.PropTypes.number.isRequired,
@@ -31,7 +35,7 @@ export default React.createClass({
               </td>
               <td>
                 <TwitterButton
-                  url={`http://localhost:5000/#/search/${this.props.id}`}
+                  url={`${clientURL}/#/search/${this.props.id}`}
                   text={`I've just learned ${this.props.skillName} #adulting # lifestack`} />
               </td>
             </tr>
@@ -46,7 +50,7 @@ export default React.createClass({
               <td></td>
               <td>
                 <TwitterButton
-                  url={`http://localhost:5000/#/search/${this.props.id}`}
+                  url={`${clientURL}/#/search/${this.props.id}`}
                   text={`I've just learned ${this.props.skillName} #adulting # lifestack`} />
               </td>
             </tr>

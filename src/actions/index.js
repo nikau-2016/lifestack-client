@@ -1,7 +1,8 @@
 import request from 'superagent'
 import {push} from 'react-router-redux'
+
 const env = process.env.NODE_ENV || 'development'
-const url = env === 'production' ? 'placeholderURL'
+const url = env === 'production' ? 'https://adulting-server.herokuapp.com'
                                     :'http://localhost:3000'
 
 const updateSearch = (skill) => {
@@ -200,7 +201,7 @@ const updateRandom = (random) => {
 export const getRandom = (id) => {
   return (dispatch) => {
     request
-      .get(`http://localhost:3000/v1/users/${id}/random`)
+      .get(`${url}/v1/users/${id}/random`)
       .end((err, res) => {
         if (err || !res.body.data) {
           return

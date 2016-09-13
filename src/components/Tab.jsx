@@ -2,6 +2,10 @@ import React from 'react'
 import SkillVideo from './SkillVideo'
 import ReactDisqusThread from 'react-disqus-thread'
 
+const env = process.env.NODE_ENV || 'development'
+const clientURL = env === 'production' ? 'https://adulting.herokuapp.com/'
+                                    :'http://localhost:5000'
+
 export default React.createClass({
   props: {
     userId: React.PropTypes.number.isRequired,
@@ -57,7 +61,7 @@ export default React.createClass({
             shortname="hashtagadulting-co-nz"
             identifier={this.props.skillId}
             title="Post your comments here"
-            url={`http://localhost:5000/search/${this.props.skillId}`}/>
+            url={`${clientURL}/search/${this.props.skillId}`}/>
           </div>
         )
       }
