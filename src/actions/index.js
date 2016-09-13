@@ -112,11 +112,14 @@ export const displayProfile = () => {
   }
 }
 
-export const upVote = (video_id) => {
+export const upVote = (video_id, user_id) => {
   return (dispatch, getState) => {
     const id = getState().search.id
     request
       .put(`${url}/v1/skills/${id}/upvote/${video_id}`)
+      .send({
+        user_id: user_id
+      })
       .end((err, res) => {
         if (err) {
           // ERROR HANDLING HERE
