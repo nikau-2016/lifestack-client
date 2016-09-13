@@ -31,7 +31,7 @@ export default React.createClass({
               <th>{this.props.skillName}</th>
               <td>{this.props.difficulty}</td>
               <td>{this.props.status}</td>
-              <td>{this.props.skillXp}</td>
+              <td>{this.props.skillXp} XP</td>
               <td></td>
               <td>
                 <TwitterButton

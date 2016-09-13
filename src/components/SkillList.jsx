@@ -70,6 +70,13 @@ export default React.createClass({
 
         <table>
           <thead>
+            <tr>
+              <th>Skill</th>
+              <th>Difficulty</th>
+              <th>Status</th>
+              <th>XP</th>
+              <th>Tutorial</th>
+            </tr>
           </thead>
           <tbody>
             {skillList}

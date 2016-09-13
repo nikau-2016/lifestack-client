@@ -13,7 +13,7 @@ export default React.createClass({
       return (
         <div className="skill-video">
           <iframe src={this.props.video.url} allowFullScreen></iframe>
-          <Link to={`/profile/${this.props.video.userId}`} className="username">Uploaded by {this.props.video.username}</Link>
+          <Link to={`/contributor/${this.props.video.userId}`} className="username">Uploaded by {this.props.video.username}</Link>
           <p className="votes">{this.props.video.votes} votes</p>
         </div>
       )
@@ -21,7 +21,7 @@ export default React.createClass({
       return (
         <div className="skill-video">
           <iframe src={this.props.video.url} allowFullScreen></iframe>
-          <Link to={`/profile/${this.props.video.userId}`} className="username">Uploaded by {this.props.video.username}</Link>
+          <Link to={`/contributor/${this.props.video.userId}`} className="username">Uploaded by {this.props.video.username}</Link>
           <div>
             <img id={this.props.video.id}
                  className="upvote"
