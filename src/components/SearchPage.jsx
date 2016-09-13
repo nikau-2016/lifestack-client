@@ -34,6 +34,7 @@ export default React.createClass({
       }
     },
     render () {
+      console.log(this.props.skill)
       return (
         <section>
           <Searchbar options={this.state.options} onSelected={this.props.onSelected}/>
