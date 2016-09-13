@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactDisqusThread from 'react-disqus-thread'
 
 export default React.createClass({
   props: {
@@ -31,6 +32,11 @@ export default React.createClass({
                  className="downvote"
                  src="./images/down.png"
                  onClick={this.props.onDownvote} />
+             <ReactDisqusThread
+             shortname="hashtagadulting-co-nz"
+             identifier="hashtagadultingcmmntsbro"
+             title="Post your comments here"
+             url="http://localhost:5000" />
           </div>
           <p className="votes">{this.props.votes} votes</p>
         </div>

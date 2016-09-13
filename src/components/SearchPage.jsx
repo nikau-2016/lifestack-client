@@ -47,7 +47,7 @@ export default React.createClass({
             onDownvote={this.props.onDownvote}
             onWatchedSkill={this.props.onWatchedSkill}
             videos={this.props.skill.videos} />
-        </section>
+       </section>
       )
     }
 })
