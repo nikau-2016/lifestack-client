@@ -9,7 +9,7 @@ export default React.createClass({
   },
   getInitialState() {
     return {
-      url: "Upload a tutorial!",
+      url: "",
       skill_id: null
     }
   },
@@ -27,7 +27,7 @@ export default React.createClass({
     this.props.onClickUpload(this.state.skill_id, this.state.url)
 
     this.setState({
-      url: "Upload a tutorial!"
+      url: ""
     })
   },
   render() {
@@ -58,6 +58,7 @@ export default React.createClass({
 
         <input
           type="text"
+          placeholder="Upload a tutorial!"
           value={this.state.url}
           onChange={this.onInputChange} />
 
