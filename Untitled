@@ -1,0 +1,9 @@
+<img id={this.props.id}
+             className="deletebutton"
+             src="./images/del32.png"
+             onClick={this.props.onDelete} />
+
+
+               onDelete: (evt) => {
+                 dispatch(deleteVideo(evt.target.id))
+               },             

@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 
 import Profile from '../components/Profile'
-import {getUserDetails, uploadShowcase, getRandom, retrieveSkill} from '../actions'
+import {getUserDetails, uploadShowcase, getRandom, retrieveSkill, deleteVideo} from '../actions'
 
 const mapStateToProps = (state) => {
   return {
@@ -24,6 +24,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     onSkill: (evt) => {
       dispatch(retrieveSkill(evt.target.id))
+    },
+    onDelete: (evt) => {
+        dispatch(deleteVideo(evt.target.id))
     }
   }
 }

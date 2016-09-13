@@ -7,8 +7,7 @@ export default React.createClass({
     url: React.PropTypes.string.isRequired,
     votes: React.PropTypes.number.isRequired,
     onUpvote: React.PropTypes.func.isRequired,
-    onDownvote: React.PropTypes.func.isRequired,
-    onDelete: React.PropTypes.func.isRequired
+    onDownvote: React.PropTypes.func.isRequired
   },
   render () {
     if (this.props.userId === 0) {
@@ -34,10 +33,6 @@ export default React.createClass({
                  onClick={this.props.onDownvote} />
           </div>
           <p className="votes">{this.props.votes} votes</p>
-            <img id={this.props.id}
-                   className="deletebutton"
-                   src="./images/del32.png"
-                   onClick={this.props.onDelete} />
         </div>
 
       )
