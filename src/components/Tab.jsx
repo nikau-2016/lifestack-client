@@ -2,7 +2,6 @@ import React from 'react'
 import SkillVideo from './SkillVideo'
 import ReactDisqusThread from 'react-disqus-thread'
 
-
 export default React.createClass({
   props: {
     userId: React.PropTypes.number.isRequired,
@@ -18,9 +17,7 @@ export default React.createClass({
       .map(elem => {
         return <SkillVideo key={elem.id}
                     userId={this.props.userId}
-                    id={elem.id}
-                    url={elem.url}
-                    votes={elem.votes}
+                    video={elem}
                     onUpvote={this.props.onUpvote}
                     onDownvote={this.props.onDownvote} />
     })
