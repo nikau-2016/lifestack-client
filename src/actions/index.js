@@ -131,7 +131,6 @@ export const upVote = (video_id) => {
 export const downVote = (video_id) => {
   return (dispatch, getState) => {
       const test = `${url}/v1/videos/${video_id}`
-      console.log(video_id, test)
     const id = getState().search.id
     request
       .put(`${url}/v1/skills/${id}/downvote/${video_id}`)
@@ -156,7 +155,6 @@ export const deleteVideo = (video_id) => {
             // ERROR HANDLING HERE
             console.log(err)
           } else {
-            console.log(res.body.data)
             dispatch(setUser(res.body.data))
           }
         })
