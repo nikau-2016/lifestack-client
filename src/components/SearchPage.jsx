@@ -29,39 +29,20 @@ export default React.createClass({
       }
     },
     render () {
-      if (this.props.userId === 0) {
-        return (
-          <section>
-            <p>Select a skill and start watching tutorials</p>
-            <Searchbar options={this.state.options} onSelected={this.props.onSelected}/>
-            <h1>{this.props.skill.skillName}</h1>
-            <div className="category">{this.props.skill.category}</div>
-            <div className="difficulty">{this.props.skill.difficulty}</div>
-            <Tab
-              userId={this.props.userId}
-              skillId={this.props.skill.id}
-              onUpvote={this.props.onUpvote}
-              onDownvote={this.props.onDownvote}
-              videos={this.props.skill.videos} />
-          </section>
-        )
-      } else {
-        return (
-          <section>
-            <p>Select a skill and start watching tutorials</p>
-            <Searchbar options={this.state.options} onSelected={this.props.onSelected}/>
-            <h1>{this.props.skill.skillName}</h1>
-            <div className="category">{this.props.skill.category}</div>
-            <div className="difficulty">{this.props.skill.difficulty}</div>
-            <Tab
-              userId={this.props.userId}
-              skillId={this.props.skill.id}
-              onUpvote={this.props.onUpvote}
-              onDownvote={this.props.onDownvote}
-              onWatchedSkill={this.props.onWatchedSkill}
-              videos={this.props.skill.videos} />
-          </section>
-        )
-      }
+      return (
+        <section>
+          <Searchbar options={this.state.options} onSelected={this.props.onSelected}/>
+          <h1>{this.props.skill.skillName}</h1>
+          <div className="category">{this.props.skill.category}</div>
+          <div className="difficulty">{this.props.skill.difficulty}</div>
+          <Tab
+            userId={this.props.userId}
+            skillId={this.props.skill.id}
+            onUpvote={this.props.onUpvote}
+            onDownvote={this.props.onDownvote}
+            onWatchedSkill={this.props.onWatchedSkill}
+            videos={this.props.skill.videos} />
+        </section>
+      )
     }
 })
