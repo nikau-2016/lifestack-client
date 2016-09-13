@@ -12,10 +12,11 @@ export default React.createClass({
       return (
         <div>
           <header>
-            <h1><Link to={'/'}>#ADULTING</Link></h1>
-            <Link to={'/search'}>Search</Link>
-            <a href="http://localhost:3000/auth/twitter">Log in with Twitter</a>
+            <h1><Link className="heading" to={'/'}>#adulting</Link></h1>
+            <Link className="search-skills" to={'/search'}>Search</Link>
+            <a className="twitter-sign-in" href="http://localhost:3000/auth/twitter">Log in with Twitter</a>
           </header>
+
           <div>
             {this.props.children}
           </div>
@@ -25,7 +26,7 @@ export default React.createClass({
       return (
         <div>
           <header>
-            <h1><Link to={'/'}>#ADULTING</Link></h1>
+            <h1><Link to={'/'}>#adulting</Link></h1>
             <Link to={'/search'}>Search</Link>
             <button onClick={this.props.onProfile}>Profile</button>
             <button onClick={this.props.onLogout}>Logout</button>
