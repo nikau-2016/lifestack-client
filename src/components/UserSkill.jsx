@@ -10,19 +10,36 @@ export default React.createClass({
     showcaseURL: React.PropTypes.string.isRequired
   },
   render() {
-    return(
-          <tr className="user-skill" id={this.props.id}>
-            <th>{this.props.skillName}</th>
-            <td>{this.props.difficulty}</td>
-            <td>{this.props.status}</td>
-            <td>{this.props.skillXp}</td>
-            <td>{this.props.showcaseURL}</td>
-            <td>
-              <TwitterButton
-                url={`http://localhost:5000/#/search/${this.props.id}`}
-                text={`I've just learned ${this.props.skillName} #adulting # lifestack`} />
-            </td>
-          </tr>
-    )
+    if (this.props.showcaseURL) {
+      return (
+            <tr className="user-skill" id={this.props.id}>
+              <th>{this.props.skillName}</th>
+              <td>{this.props.difficulty}</td>
+              <td>{this.props.status}</td>
+              <td>{this.props.skillXp}</td>
+              <td><button onClick={this.props.onSkill} id={this.props.id} name={this.props.showcaseURL}>Tutorial</button></td>
+              <td>
+                <TwitterButton
+                  url={`http://localhost:5000/#/search/${this.props.id}`}
+                  text={`I've just learned ${this.props.skillName} #adulting # lifestack`} />
+              </td>
+            </tr>
+      )
+    } else {
+      return (
+            <tr className="user-skill" id={this.props.id}>
+              <th>{this.props.skillName}</th>
+              <td>{this.props.difficulty}</td>
+              <td>{this.props.status}</td>
+              <td>{this.props.skillXp}</td>
+              <td></td>
+              <td>
+                <TwitterButton
+                  url={`http://localhost:5000/#/search/${this.props.id}`}
+                  text={`I've just learned ${this.props.skillName} #adulting # lifestack`} />
+              </td>
+            </tr>
+      )
+    }
   }
 })

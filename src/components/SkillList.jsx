@@ -4,6 +4,7 @@ import UserSkill from './UserSkill'
 export default React.createClass({
   props: {
     skillList: React.PropTypes.array.isRequired,
+    onSkill: React.PropTypes.func.isRequired,
     onClickUpload: React.PropTypes.func.isRequired
   },
   getInitialState() {
@@ -24,6 +25,7 @@ export default React.createClass({
   },
   onUploadSubmit () {
     this.props.onClickUpload(this.state.skill_id, this.state.url)
+
     this.setState({
       url: "Upload a tutorial!"
     })
@@ -38,6 +40,7 @@ export default React.createClass({
               skillXp={elem.skillXp}
               difficulty={elem.difficulty}
               onClickUpload={this.props.onClickUpload}
+              onSkill={this.props.onSkill}
               showcaseURL={elem.showcaseURL} />
     })
 
