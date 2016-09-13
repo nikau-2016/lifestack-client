@@ -22,6 +22,12 @@ export default React.createClass({
       skill_id: evt.target.value
     })
   },
+  onUploadSubmit () {
+    this.props.onClickUpload(this.state.skill_id, this.state.url)
+    this.setState({
+      url: "Upload a tutorial!"
+    })
+  },
   render() {
     const skillList = this.props.skillList.map((elem) => {
       return <UserSkill
@@ -49,13 +55,12 @@ export default React.createClass({
 
         <input
           type="text"
-          placeholder="Showcase your learned skill!"
-          value={this.props.showcaseUrl}
+          value={this.state.url}
           onChange={this.onInputChange} />
 
         <button
           type="button"
-          onClick={() => this.props.onClickUpload(this.state.skill_id, this.state.url)}>
+          onClick={this.onUploadSubmit}>
         Upload</button>
 
 
