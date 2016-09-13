@@ -35,6 +35,7 @@ export default React.createClass({
           </div>
           <p className="votes">{this.props.video.votes} votes</p>
         </div>
+
       )
     }
   }

@@ -130,6 +130,7 @@ export const upVote = (video_id) => {
 
 export const downVote = (video_id) => {
   return (dispatch, getState) => {
+      const test = `${url}/v1/videos/${video_id}`
     const id = getState().search.id
     request
       .put(`${url}/v1/skills/${id}/downvote/${video_id}`)
@@ -143,6 +144,22 @@ export const downVote = (video_id) => {
       })
   }
 }
+
+export const deleteVideo = (video_id) => {
+    return (dispatch, getState) => {
+      const id = getState().user.id
+      request
+        .delete(`${url}/v1/users/${id}/videos/${video_id}`)
+        .end((err, res) => {
+          if (err) {
+            // ERROR HANDLING HERE
+            console.log(err)
+          } else {
+            dispatch(setUser(res.body.data))
+          }
+        })
+    }
+  }
 
 export const logout = (userId) => {
   return (dispatch) => {

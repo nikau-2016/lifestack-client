@@ -5,7 +5,8 @@ export default React.createClass({
   props: {
     skillList: React.PropTypes.array.isRequired,
     onSkill: React.PropTypes.func.isRequired,
-    onClickUpload: React.PropTypes.func.isRequired
+    onClickUpload: React.PropTypes.func.isRequired,
+    onDelete: React.PropTypes.func.isRequired
   },
   getInitialState() {
     return {
@@ -41,7 +42,9 @@ export default React.createClass({
               difficulty={elem.difficulty}
               onClickUpload={this.props.onClickUpload}
               onSkill={this.props.onSkill}
-              showcaseURL={elem.showcaseURL} />
+              onDelete={this.props.onDelete}
+              showcaseURL={elem.showcaseURL}
+              video={elem.video} />
     })
 
     const options = this.props.skillList.map((elem, i) => {

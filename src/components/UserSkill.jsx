@@ -7,17 +7,28 @@ export default React.createClass({
     skillName: React.PropTypes.string.isRequired,
     status: React.PropTypes.string.isRequired,
     skillXp: React.PropTypes.number.isRequired,
-    showcaseURL: React.PropTypes.string.isRequired
+    showcaseURL: React.PropTypes.string.isRequired,
+    video: React.PropTypes.number.isRequired,
+    onDelete: React.PropTypes.func.isRequired
   },
   render() {
-    if (this.props.showcaseURL) {
+    if (this.props.showcaseURL && this.props.video[0]) {
       return (
             <tr className="user-skill" id={this.props.id}>
-              <td>{this.props.skillName}</td>
+              <td><span onClick={this.props.onSkill} id={this.props.id} name={this.props.showcaseURL}>
+                    {this.props.skillName}
+                </span>
+              </td>
               <td>{this.props.difficulty}</td>
               <td>{this.props.status}</td>
               <td>{this.props.skillXp}</td>
-              <td><button onClick={this.props.onSkill} id={this.props.id} name={this.props.showcaseURL}>Tutorial</button></td>
+              <td>{this.props.showcaseURL}
+                    <img id={this.props.id}
+                               className="deletebutton"
+                               src="./images/del32.png"
+                               id={this.props.video[0].video_id}
+                               onClick={this.props.onDelete} />
+              </td>
               <td>
                 <TwitterButton
                   url={`http://localhost:5000/#/search/${this.props.id}`}

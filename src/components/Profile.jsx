@@ -10,7 +10,8 @@ export default React.createClass({
       onSkill: React.PropTypes.object.isRequired,
       onRandomSkill: React.PropTypes.object.isRequired,
       onLoad: React.PropTypes.func.isRequired,
-      onClickUpload: React.PropTypes.func.isRequired
+      onClickUpload: React.PropTypes.func.isRequired,
+      onDelete: React.PropTypes.func.isRequired
     },
     componentWillMount () {
       this.props.onLoad(this.props.params.id)
@@ -35,7 +36,8 @@ export default React.createClass({
                     remainingXp ={this.props.user.remainingXp} />
                 <SkillList skillList={this.props.user.skillList}
                            onSkill={this.props.onSkill}
-                           onClickUpload={this.props.onClickUpload} />
+                           onClickUpload={this.props.onClickUpload}
+                           onDelete={this.props.onDelete} />
             </div>
         )
     }
