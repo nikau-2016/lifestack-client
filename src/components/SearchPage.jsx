@@ -38,6 +38,8 @@ export default React.createClass({
             <div className="category">{this.props.skill.category}</div>
             <div className="difficulty">{this.props.skill.difficulty}</div>
             <Tab
+              userId={this.props.userId}
+              skillId={this.props.skill.id}
               onUpvote={this.props.onUpvote}
               onDownvote={this.props.onDownvote}
               videos={this.props.skill.videos} />
@@ -51,12 +53,12 @@ export default React.createClass({
             <h1>{this.props.skill.skillName}</h1>
             <div className="category">{this.props.skill.category}</div>
             <div className="difficulty">{this.props.skill.difficulty}</div>
-            <button
-            name={this.props.skill.id}
-            onClick={this.props.onWatchedSkill}>Got It!</button>
             <Tab
+              userId={this.props.userId}
+              skillId={this.props.skill.id}
               onUpvote={this.props.onUpvote}
               onDownvote={this.props.onDownvote}
+              onWatchedSkill={this.props.onWatchedSkill}
               videos={this.props.skill.videos} />
           </section>
         )
