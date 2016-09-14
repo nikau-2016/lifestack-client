@@ -314,21 +314,26 @@ a.username {
   bottom: 0px;
   right: 10px;
   font-size: 5rem;
-  color: #2e383c;
+  color: #18a5af;
 }
 
 .user-name {
   font-size: 2rem;
-  border-top: 4px solid black;
-  border-right: 4px solid black;
+  border-top: 4px solid #2465bd;
+  border-right: 4px solid #2465bd;
   margin-bottom: 0;
   padding-left: 1rem;
 }
 
+.select-upload button {
+  color: white;
+  background-color: #9388bb;
+}
+
 .levelXp {
-  border-right: 4px solid black;
-  border-top: 4px solid black;
-  border-bottom: 4px solid black;
+  border-right: 4px solid #2465bd;
+  border-top: 4px solid #2465bd;
+  border-bottom: 4px solid #2465bd;
   margin-bottom: 0;
   height: 30px;
 }
