@@ -114,10 +114,6 @@ a {
   text-decoration: none;
 }
 
-iframe {
-    border: 0;
-  }
-
 login.fields {
     padding-top:100px;
     padding-left:200px;
@@ -211,13 +207,37 @@ select {
 
 }
 
+.got-it-btn {
+  margin: auto;
+  width: 50%;
+}
+
 .skill-video {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   padding-top: 25px;
   height: 720px;
+  flex-wrap: wrap;
+  margin-bottom: 10rem;
+}
+
+.voting-box {
+  flex-wrap: wrap;
+  margin-right: 3rem;
+}
+
+.skill-video p {
+  margin-right: 3rem;
+}
+
+.upvote {
+  margin-bottom: 1rem;
+}
+
+a.username {
+  margin-bottom: 100px;
+  z-index: 10;
 }
 
 .skill-video iframe {
