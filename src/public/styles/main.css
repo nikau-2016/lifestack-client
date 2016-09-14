@@ -136,17 +136,12 @@ div.Dropdown-placeholder {
   margin: 0 auto;
 }
 
-  .top-videos {
-    margin: 0;
-    display:block;
-    align-items: center;
-    max width: 100%;
-  }
-
-div.Dropdown-placeholder {
-  display:block;
-  margin: 0 auto;
-
+.top-videos {
+  margin: 0;
+  display: block;
+  align-items: center;
+  max width: 100%;
+}
 
 /* --------------------- SKILL PAGE STYLING MAN ------------------------------ */
 
