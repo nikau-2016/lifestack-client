@@ -44,8 +44,10 @@ export default React.createClass({
           <div className="error">{this.props.error}</div>
           <Searchbar options={this.state.options} onSelected={this.props.onSelected}/>
           <h1 className="skillTitle">{this.props.skill.skillName}</h1>
-          <div className="category">{this.props.skill.category}</div>
-          <div className="difficulty">{this.props.skill.difficulty}</div>
+            <div className="diff-cat">
+              <h3 className="category">{this.props.skill.category}</h3>
+              <h3 className="difficulty">{this.props.skill.difficulty}</h3>
+            </div>
           <Tab
             user={this.props.user}
             skillId={this.props.skill.id}
