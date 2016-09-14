@@ -14,8 +14,8 @@ export default React.createClass({
           <header>
             <h1><Link className="heading" to={'/'}>#adulting</Link></h1>
             <div className="buttons">
-              <button><a className="twitter-sign-in" href="http://adulting-server.herokuapp.com/auth/twitter">Log in with Twitter</a></button>
               <button><Link className="search-home" to={'/search'}>Search</Link></button>
+              <button><a className="twitter-sign-in" href="http://adulting-server.herokuapp.com/auth/twitter">Log in with Twitter</a></button>
             </div>
           </header>
           {this.props.children}
@@ -32,15 +32,15 @@ export default React.createClass({
           <header>
             <h1><Link to={'/'}>#adulting</Link></h1>
             <div className="buttons">
-              <button onClick={this.props.onLogout}>Logout</button>
+            <button><Link className="search-home" to={'/search'}>Search</Link></button>
               <div>
-                <button><Link className="search-home" to={'/search'}>Search</Link></button>
                 <button onClick={this.props.onProfile}>Profile</button>
+                <button onClick={this.props.onLogout}>Logout</button>
               </div>
             </div>
           </header>
           {this.props.children}
-          <footer>
+          <footer className="footer">
             Check out our code on Github! <br />
             <a href="https://github.com/nikau-2016/lifestack.git">Back-End</a>
             <a href="https://github.com/nikau-2016/lifestack-client.git">Front-End</a>

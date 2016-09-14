@@ -29,6 +29,7 @@ export default React.createClass({
                           .map((elem, i) => {
                             return <option key={i} value={elem}>{elem}</option>
                           })
+                          
     const difficulties = this.props.options
                           .map(elem => elem.difficulty)
                           .filter((elem, i, ar) => ar.indexOf(elem) === i)
@@ -66,7 +67,7 @@ export default React.createClass({
           {difficulties}
         </select>
         <select className="skill" onChange={this.onSkillSelect} value={this.state.selectedSkill}>
-          <option value="Select a skill">Select a skill</option>
+          <option value="">Select a skill</option>
           {skills}
         </select>
       </div>

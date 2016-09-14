@@ -14,8 +14,8 @@ body {
 
 footer {
   padding: 2rem;
-  height:200px;
-  background-color:#08415C;
+  background-color:#6564a7;
+  height:70px;
   color: white;
   display:block;
   text-align: center;
@@ -55,7 +55,8 @@ header {
   display: flex;
   justify-content: space-between;
   font-family: 'Baloo Tamma', cursive;
-  background-color:#38369A;
+  /*background-color:#7e7cd2;*/
+  background-color:#6564a7;
   text-align: center;
   width:100%;
 }
@@ -71,10 +72,13 @@ header {
   padding-bottom:100px;
   text-align: center;
 }
-
+.about-paragraph1 {
+  padding-left: 2.5%;
+}
 
 .banner {
   background-image: url("images/millenial-women-on-phone.jpg");
+  background-size: cover;
   height:600px;
   width:100%;
 }
@@ -83,10 +87,10 @@ header {
   height:400px;
   margin: 0, auto;
   font-family: 'Pacifico', cursive;
-  padding-top:200px;
-  padding-left:100px;
+  padding-top:5%;
+  padding-left:5%;
   font-size: 30px;
-  color:rgba(255,255,255,0.85);
+  color:rgba(255,255,255,255);
   text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
   text-align: center;
 }
@@ -102,20 +106,21 @@ login.fields {
   }
 
   .top-videos {
-    background-color: #7CA5B8;
+    background-color:#c2d9e8;
     display:block;
     margin: 0 auto;
     text-align: center;
   }
 
   .top-videos div {
-    /*background-color: #CB818C;*/
     display: inline-block;
     margin: 0 6px;
+    text-align: center;
   }
 
   .top-videos-heading {
-    padding-top: 20px;
+    padding-top:40px;
+    text-align: center;
   }
 
 .top3-videos {
@@ -125,7 +130,9 @@ login.fields {
   padding-top: 25px;
   height: 480px;
 }
-
+iframe {
+  border:0;
+}
 .top3-videos iframe {
   width: 100%;
   height: 100%;
@@ -143,10 +150,11 @@ div.Dropdown-placeholder {
   max width: 100%;
 }
 
-/* --------------------- SKILL PAGE STYLING MAN ------------------------------ */
+/* --------------------- SKILL PAGE STYLING ------------------------------ */
 
 .skillTitle {
   color: black;
+  margin-top: 2%;
 }
 
 .searchBar {
@@ -155,7 +163,7 @@ div.Dropdown-placeholder {
   flex-wrap: wrap;
 }
 
-select {
+.searchBar select {
   font-size: 1.5em;
   display: inline-flex;
   margin-top: 2%;
@@ -181,20 +189,23 @@ select {
   text-align-last: center;
 }
 
-.category {
-  font-size: 4em;
+.diff-cat {
+  display: inline-flex;
+  justify-content: center;
+}
 
+.category {
+  margin-right: 10%;
 }
 
 .difficulty {
-  font-size: 4em;
+  margin-left: 10%;
 }
 
 .tab {
   display: flex;
   flex-direction: column;
   justify-content: center;
-
 }
 
 .got-it-btn {
@@ -207,9 +218,10 @@ select {
   align-items: center;
   justify-content: center;
   padding-top: 25px;
-  height: 720px;
+  height: 600px;
   flex-wrap: wrap;
   margin-bottom: 10rem;
+  margin-right: 6%;
 }
 
 .voting-box {
@@ -219,6 +231,7 @@ select {
 
 .skill-video p {
   margin-right: 3rem;
+  font-size: 2em;
 }
 
 .upvote {
@@ -226,8 +239,17 @@ select {
 }
 
 a.username {
-  margin-bottom: 100px;
-  z-index: 10;
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
+  text-decoration: none;
+  font-size: 2em;
+  margin-right: 37.5%;
+  color: black;
+
+}
+
+a:hover {
+  color: #1eaedb;
 }
 
 .skill-video iframe {
@@ -235,9 +257,11 @@ a.username {
   height: 100%;
 }
 
-.skill-video a, .skill-video p {
-  font-size: 2em;
+#disqus_thread {
+  margin-left: 2.5%;
+  margin-right: 2.5%;
 }
+
 /* ------------------- PROFILE / CONTRIBUTOR STYLE ----------*/
 
 .user-profile,
@@ -270,11 +294,12 @@ a.username {
 /* ------------------- USER SKILL LIST STYLE ---------------*/
 
 .skill-list .select-upload * {
+  display: inline-block;
   margin-right: 1rem;
 }
 
 .upload-url {
-  width: 50%;
+  width: 30%;
 }
 
 .delete-button {
@@ -289,6 +314,10 @@ a.username {
   display: flex;
   flex-direction: row;
   margin: 50px;
+}
+
+.user-skill {
+  font-family: none;
 }
 
 .profile-pic {
@@ -313,21 +342,26 @@ a.username {
   bottom: 0px;
   right: 10px;
   font-size: 5rem;
-  color: #2e383c;
+  color: #18a5af;
 }
 
 .user-name {
   font-size: 2rem;
-  border-top: 4px solid black;
-  border-right: 4px solid black;
+  border-top: 4px solid #2465bd;
+  border-right: 4px solid #2465bd;
   margin-bottom: 0;
   padding-left: 1rem;
 }
 
+.select-upload button {
+  color: white;
+  background-color: #9388bb;
+}
+
 .levelXp {
-  border-right: 4px solid black;
-  border-top: 4px solid black;
-  border-bottom: 4px solid black;
+  border-right: 4px solid #2465bd;
+  border-top: 4px solid #2465bd;
+  border-bottom: 4px solid #2465bd;
   margin-bottom: 0;
   height: 30px;
 }
@@ -341,4 +375,19 @@ a.username {
 
 .label {
     padding-left: 1rem;
+}
+
+@media screen and (min-width: 550px) {
+.mission-statement {
+  padding-top: 0%;
+  font-size: 25px;
+}
+}
+
+@media screen and (min-width: 720px) {
+ .mission-statement {
+  padding-top:3%;
+  padding-left:5%;
+  font-size: 30px;
+}
 }
