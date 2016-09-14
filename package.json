@@ -8,6 +8,7 @@
     "devserver": "webpack-dev-server --hot --inline",
     "server": "nodemon ./src/server/index.js",
     "start": "node ./src/server/index.js",
+    "postinstall": "npm run build",
     "test": "tape './tests/**/*.test.js' -r babel-register | tap-spec"
   },
   "repository": {
