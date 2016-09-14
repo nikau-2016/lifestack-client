@@ -24,7 +24,7 @@ export default React.createClass({
               <td>{this.props.difficulty}</td>
               <td>{this.props.status}</td>
               <td>{this.props.skillXp} XP</td>
-              <td>{this.props.showcaseURL}
+              <td>Delete your Contribution for this Skill.
                     <img id={this.props.id}
                                className="delete-button"
                                src="./images/delete.png"
