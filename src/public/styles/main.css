@@ -51,63 +51,40 @@ header {
   display: flex;
   justify-content: space-between;
   font-family: 'Baloo Tamma', cursive;
-  background-color:#08415C;
+  background-color:#38369A;
   text-align: center;
   width:100%;
 }
 
-a {
-  margin-top:30px;
-  color: inherit;
-}
-
-.About {
-  display:inline-grid;
-  font-family: 'Fredoka One';
-  font-size: 30px;
+/* ------------------- HEADER / FOOTER STYLE ----------*/
+.about {
+  display:flex;
+  font-family: 'Baloo Tamma', cursive;
+  font-size: 20px;
   margin:0 auto;
   max-width: 100%;
-  padding: 40px 200px;
+  padding-top: 80px;
+  padding-bottom:100px;
   text-align: center;
 }
 
+
 .banner {
   background-image: url("images/millenial-women-on-phone.jpg");
-  background-color: blue
-  color: #CC2936;
   height:600px;
   width:100%;
 }
 
 .mission-statement {
-  background: url(images/millenial-women-on-phone.jpg) no-repeat;
   height:400px;
-  background-size: cover;
-  display:block;
   margin: 0, auto;
   font-family: 'Pacifico', cursive;
-  padding-top:300px;
+  padding-top:200px;
+  padding-left:100px;
   font-size: 30px;
   color:rgba(255,255,255,0.85);
   text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
   text-align: center;
-}
-
-.About {
-  display:inline-grid;
-  margin:0 auto;
-  text-align: center;
-  padding-top: 80px;
-  padding-bottom:100px;
-  font-size: 20px;
-  max-width: 600px;
-}
-
-.top-videos {
-  margin: 0;
-  display:block;
-  align-items: center;
-  max width: 100%;
 }
 
 .heading {
@@ -124,24 +101,15 @@ login.fields {
     100px;
   }
 
-.mission-statement {
-    color: #FFE100;
-    padding: 80px 0 0 75px;
-    font-family: 'Pacifico', cursive;
-    font-size: 40px;
-    text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
-    text-align: left;
-  }
-
   .top-videos {
-    background-color: #F1BF98;
+    background-color: #7CA5B8;
     display:block;
-    margin:0 auto;
+    margin: 0 auto;
     text-align: center;
   }
 
   .top-videos div {
-    background-color: #F1BF98;
+    /*background-color: #CB818C;*/
     display: inline-block;
     margin: 0 6px;
   }
@@ -149,6 +117,19 @@ login.fields {
   .top-videos-heading {
     padding-top: 20px;
   }
+
+.top3-videos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 25px;
+  height: 480px;
+}
+
+.top3-videos iframe {
+  width: 100%;
+  height: 100%;
+}
 
 div.Dropdown-placeholder {
   display:block;
