@@ -118,6 +118,24 @@ login.fields {
     padding-top: 20px;
   }
 
+.top3-videos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 25px;
+  height: 480px;
+}
+
+.top3-videos iframe {
+  width: 100%;
+  height: 100%;
+}
+
+div.Dropdown-placeholder {
+  display: block;
+  margin: 0 auto;
+}
+
   .top-videos {
     margin: 0;
     display:block;
@@ -127,14 +145,8 @@ login.fields {
 
 div.Dropdown-placeholder {
   display:block;
-  margin:0,auto;
+  margin: 0 auto;
 
-.twitter-sign-in {
-    color: #EEE5E9;
-    font-size: 2.5em;
-    text-align: center;
-    text-decoration: none;
-  }
 
 /* --------------------- SKILL PAGE STYLING MAN ------------------------------ */
 
