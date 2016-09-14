@@ -25,11 +25,11 @@ export default React.createClass({
               </td>
               <td>{this.props.difficulty}</td>
               <td>{this.props.status}</td>
-              <td>{this.props.skillXp}</td>
+              <td>{this.props.skillXp} XP</td>
               <td>{this.props.showcaseURL}
                     <img id={this.props.id}
-                               className="deletebutton"
-                               src="./images/del32.png"
+                               className="delete-button"
+                               src="./images/delete.png"
                                id={this.props.video[0].video_id}
                                onClick={this.props.onDelete} />
               </td>
