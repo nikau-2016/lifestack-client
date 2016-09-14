@@ -15,8 +15,9 @@ export default React.createClass({
         onWatchedSkill: React.PropTypes.func.isRequired,
         onUpvote: React.PropTypes.func.isRequired,
         onDownvote: React.PropTypes.func.isRequired,
-        userId: React.PropTypes.number.isRequired,
-        onLoad: React.PropTypes.func.isRequired
+        user: React.PropTypes.object.isRequired,
+        onLoad: React.PropTypes.func.isRequired,
+        error: React.PropTypes.string.isRequired
     },
     componentWillMount () {
       request
@@ -40,12 +41,13 @@ export default React.createClass({
     render () {
       return (
         <section>
+          <div className="error">{this.props.error}</div>
           <Searchbar options={this.state.options} onSelected={this.props.onSelected}/>
-          <h1>{this.props.skill.skillName}</h1>
+          <h1 className="skillTitle">{this.props.skill.skillName}</h1>
           <div className="category">{this.props.skill.category}</div>
           <div className="difficulty">{this.props.skill.difficulty}</div>
           <Tab
-            userId={this.props.userId}
+            user={this.props.user}
             skillId={this.props.skill.id}
             onUpvote={this.props.onUpvote}
             onDownvote={this.props.onDownvote}

@@ -10,7 +10,8 @@ export default React.createClass({
       onRandomSkill: React.PropTypes.object.isRequired,
       onLoad: React.PropTypes.func.isRequired,
       onClickUpload: React.PropTypes.func.isRequired,
-      onDelete: React.PropTypes.func.isRequired
+      onDelete: React.PropTypes.func.isRequired,
+      error: React.PropTypes.string.isRequired
     },
     componentWillMount () {
       this.props.onLoad(this.props.params.id)
@@ -22,6 +23,7 @@ export default React.createClass({
     render () {
         return (
             <div className="user-profile">
+              <div className="error">{this.props.error}</div>
               <UserGame
                   id={this.props.user.id}
                   username={this.props.user.username}

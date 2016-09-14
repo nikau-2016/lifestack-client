@@ -6,6 +6,10 @@ body {
   margin: 0;
 }
 
+.error {
+  color: red;
+}
+
 /* ------------------- HEADER / FOOTER STYLE ----------*/
 
 footer {
@@ -91,10 +95,6 @@ header {
   text-decoration: none;
 }
 
-iframe {
-    border: 0;
-  }
-
 login.fields {
     padding-top:100px;
     padding-left:200px;
@@ -132,10 +132,106 @@ login.fields {
 }
 
 div.Dropdown-placeholder {
-  display:block;
-  margin:0,auto;
+  display: block;
+  margin: 0 auto;
 }
 
+
+/* --------------------- SKILL PAGE STYLING MAN ------------------------------ */
+
+.skillTitle {
+  color: black;
+}
+
+.searchBar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+select {
+  font-size: 1.5em;
+  display: inline-flex;
+  margin-top: 2%;
+  flex-direction: row;
+}
+
+.cat {
+  width: 300px;
+  margin-right: 1%;
+  text-align-last: center;
+}
+
+.diff {
+  width: 300px;
+  margin-left: 1%;
+  margin-right: 1%;
+  text-align-last: center;
+}
+
+.skill {
+  width: 300px;
+  margin-left: 1%;
+  text-align-last: center;
+}
+
+.category {
+  font-size: 4em;
+
+}
+
+.difficulty {
+  font-size: 4em;
+}
+
+.tab {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.got-it-btn {
+  margin: auto;
+  width: 50%;
+}
+
+.skill-video {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 25px;
+  height: 720px;
+  flex-wrap: wrap;
+  margin-bottom: 10rem;
+}
+
+.voting-box {
+  flex-wrap: wrap;
+  margin-right: 3rem;
+}
+
+.skill-video p {
+  margin-right: 3rem;
+}
+
+.upvote {
+  margin-bottom: 1rem;
+}
+
+a.username {
+  margin-bottom: 100px;
+  z-index: 10;
+}
+
+.skill-video iframe {
+  width: 80%;
+  height: 100%;
+}
+
+.skill-video a, .skill-video p {
+  font-size: 2em;
+}
 /* ------------------- PROFILE / CONTRIBUTOR STYLE ----------*/
 
 .user-profile,
