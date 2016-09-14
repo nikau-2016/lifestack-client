@@ -1,9 +1,7 @@
 import React from 'react'
 import {TwitterButton} from 'react-social-buttons'
 
-const env = process.env.NODE_ENV || 'development'
-const clientURL = env === 'production' ? 'https://adulting.herokuapp.com/'
-                                    :'http://localhost:5000'
+const clientURL = 'http://localhost:5000'
 
 export default React.createClass({
   props: {
@@ -26,7 +24,7 @@ export default React.createClass({
               <td>{this.props.difficulty}</td>
               <td>{this.props.status}</td>
               <td>{this.props.skillXp} XP</td>
-              <td>{this.props.showcaseURL}
+              <td>Delete your Contribution for this Skill.
                     <img id={this.props.id}
                                className="delete-button"
                                src="./images/delete.png"

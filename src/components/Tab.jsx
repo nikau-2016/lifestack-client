@@ -2,9 +2,7 @@ import React from 'react'
 import SkillVideo from './SkillVideo'
 import ReactDisqusThread from 'react-disqus-thread'
 
-const env = process.env.NODE_ENV || 'development'
-const clientURL = env === 'production' ? 'https://adulting.herokuapp.com/'
-                                    :'http://localhost:5000'
+const clientURL = 'http://localhost:5000'
 
 export default React.createClass({
   props: {
@@ -29,57 +27,65 @@ export default React.createClass({
     // Logged out tab
     if (this.props.user.id === 0) {
       if (!this.props.skillId) {
-        return (
-          <div className="tab">
-            <p>Select a skill and start browsing videos</p>
-          </div>
-        )
+        return this.tabWithoutSkill(videos)
       } else {
-        return (
-          <div className="tab">
-            <p>Log in to vote on the best videos!</p>
-            {videos}
-          </div>
-        )
+        return this.tabWithSkillLO(videos)
       }
     // Logged in tab
     } else {
       const watched = this.props.user.skillList.find(elem => elem.skill_id === this.props.skillId)
       if (!this.props.skillId) {
-        return (
-          <div className="tab">
-            <p>Select a skill and start browsing videos</p>
-          </div>
-        )
+        return this.tabWithoutSkill(videos)
       } else {
         if (watched) {
-          return (
-            <div className="tab">
-              {videos}
-              <ReactDisqusThread
-              shortname="hashtagadulting-co-nz"
-              identifier={this.props.skillId}
-              title="Post your comments here"
-              url={`${clientURL}/search/${this.props.skillId}`}/>
-            </div>
-          )
+          return this.tabWatchedSkill(videos)
         } else {
-          return (
-            <div className="tab">
-            <button
-            className="got-it-btn"
-            name={this.props.skillId}
-            onClick={this.props.onWatchedSkill}>Got It!</button>
-              {videos}
-              <ReactDisqusThread
-              shortname="hashtagadulting-co-nz"
-              identifier={this.props.skillId}
-              title="Post your comments here"
-              url={`${clientURL}/search/${this.props.skillId}`}/>
-            </div>
-          )
+          return this.tabToLearnSkill(videos)
         }
       }
     }
+  },
+  tabWithSkillLO (videos) {
+    return (
+      <div className="tab">
+        <p>Log in to vote on the best videos!</p>
+        {videos}
+      </div>
+    )
+  },
+  tabWithoutSkill (videos) {
+    return (
+      <div className="tab">
+        <p>Select a skill and start browsing videos</p>
+      </div>
+    )
+  },
+  tabWatchedSkill (videos) {
+    return (
+      <div className="tab">
+        {videos}
+        <ReactDisqusThread
+        shortname="hashtagadulting-co-nz"
+        identifier={this.props.skillId}
+        title="Post your comments here"
+        url={`${clientURL}/search/${this.props.skillId}`}/>
+      </div>
+    )
+  },
+  tabToLearnSkill (videos) {
+    return (
+      <div className="tab">
+      <button
+      className="got-it-btn"
+      name={this.props.skillId}
+      onClick={this.props.onWatchedSkill}>Got It!</button>
+        {videos}
+        <ReactDisqusThread
+        shortname="hashtagadulting-co-nz"
+        identifier={this.props.skillId}
+        title="Post your comments here"
+        url={`${clientURL}/search/${this.props.skillId}`}/>
+      </div>
+    )
   }
 })

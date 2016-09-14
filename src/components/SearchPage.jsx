@@ -3,9 +3,7 @@ import request from 'superagent'
 import Tab from './Tab'
 import Searchbar from './Searchbar'
 
-const env = process.env.NODE_ENV || 'development'
-const url = env === 'production' ? 'https://adulting-server.herokuapp.com'
-                                    :'http://localhost:3000'
+const url = 'http://localhost:3000'
 
 export default React.createClass({
     props: {
@@ -44,8 +42,10 @@ export default React.createClass({
           <div className="error">{this.props.error}</div>
           <Searchbar options={this.state.options} onSelected={this.props.onSelected}/>
           <h1 className="skillTitle">{this.props.skill.skillName}</h1>
-          <div className="category">{this.props.skill.category}</div>
-          <div className="difficulty">{this.props.skill.difficulty}</div>
+            <div className="diff-cat">
+              <h3 className="category">{this.props.skill.category}</h3>
+              <h3 className="difficulty">{this.props.skill.difficulty}</h3>
+            </div>
           <Tab
             user={this.props.user}
             skillId={this.props.skill.id}
