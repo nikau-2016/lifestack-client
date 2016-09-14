@@ -23,6 +23,39 @@ a {
 
 body {
   font-family: 'Baloo Tamma', cursive;
+  text-align: center;
+}
+
+.twitter-sign-in {
+  text-decoration: none;
+  padding-left: 500px;
+}
+
+.mission-statement {
+  background: url(images/millenial-women-on-phone.jpg) no-repeat;
+  height:400px;
+  background-size: cover;
+  display:block;
+  margin: 0, auto;
+  font-family: 'Pacifico', cursive;
+  padding-top:300px;
+  font-size: 30px;
+  color:rgba(255,255,255,0.85);
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.About {
+  display:inline-grid;
+  margin:0 auto;
+  text-align: center;
+  padding-top: 80px;
+  padding-bottom:100px;
+  font-size: 20px;
+  max-width: 600px;
+}
+
+.top-videos {
   margin: 0;
   display:block;
   align-items: center;
@@ -119,6 +152,53 @@ div.Dropdown-placeholder {
   margin:0,auto;
 }
 
+/* ------------------- PROFILE / CONTRIBUTOR STYLE ----------*/
+
+.user-profile,
+.contributor-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ------------------- USER GAME STYLE ----------------------*/
+
+.skill-suggestion {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+  min-width: 600px;
+}
+
+.suggested-skill {
+  font-size: 3rem;
+}
+
+.suggestion-answer {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ------------------- USER SKILL LIST STYLE ---------------*/
+
+.skill-list .select-upload * {
+  margin-right: 1rem;
+}
+
+.upload-url {
+  width: 50%;
+}
+
+.delete-button {
+  top: 0;
+  width: 2rem;
+  margin-left: 1.5rem;
+}
+
+/* ------------------- USER GAME STYLE ----------------------*/
+
 .user-game {
   display: flex;
   flex-direction: row;
@@ -127,7 +207,7 @@ div.Dropdown-placeholder {
 
 .profile-pic {
   height: 100px;
-  border: 2px solid black;
+  border: 4px solid black;
 }
 
 .left {
@@ -147,23 +227,32 @@ div.Dropdown-placeholder {
   bottom: 0px;
   right: 10px;
   font-size: 5rem;
-  color: red;
+  color: #2e383c;
 }
 
 .user-name {
-  border: 2px solid black;
+  font-size: 2rem;
+  border-top: 4px solid black;
+  border-right: 4px solid black;
   margin-bottom: 0;
+  padding-left: 1rem;
 }
 
 .levelXp {
-  border: 2px solid black;
+  border-right: 4px solid black;
+  border-top: 4px solid black;
+  border-bottom: 4px solid black;
   margin-bottom: 0;
   height: 30px;
 }
 
 .totalXp {
-  height: 28px;
-  border: 2px solid green;
+  height: 22px;
+  border: 4px solid green;
   background-color: green;
   margin-bottom: 0;
+}
+
+.label {
+    padding-left: 1rem;
 }
