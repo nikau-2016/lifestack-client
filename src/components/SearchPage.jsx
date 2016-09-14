@@ -3,6 +3,10 @@ import request from 'superagent'
 import Tab from './Tab'
 import Searchbar from './Searchbar'
 
+const env = process.env.NODE_ENV || 'development'
+const url = env === 'production' ? 'https://adulting-server.herokuapp.com'
+                                    :'http://localhost:3000'
+
 export default React.createClass({
     props: {
         params: React.PropTypes.object.isRequired,
@@ -12,11 +16,12 @@ export default React.createClass({
         onUpvote: React.PropTypes.func.isRequired,
         onDownvote: React.PropTypes.func.isRequired,
         userId: React.PropTypes.number.isRequired,
-        onLoad: React.PropTypes.func.isRequired
+        onLoad: React.PropTypes.func.isRequired,
+        error: React.PropTypes.string.isRequired
     },
     componentWillMount () {
       request
-      .get("http://localhost:3000/v1/skills")
+      .get(`${url}/v1/skills`)
       .end((err, res) => {
         if (err) {
           return
@@ -36,8 +41,9 @@ export default React.createClass({
     render () {
       return (
         <section>
+          <div className="error">{this.props.error}</div>
           <Searchbar options={this.state.options} onSelected={this.props.onSelected}/>
-          <h1>{this.props.skill.skillName}</h1>
+          <h1 className="skillTitle">{this.props.skill.skillName}</h1>
           <div className="category">{this.props.skill.category}</div>
           <div className="difficulty">{this.props.skill.difficulty}</div>
           <Tab

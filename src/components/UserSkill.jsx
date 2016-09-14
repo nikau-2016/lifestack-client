@@ -1,6 +1,10 @@
 import React from 'react'
 import {TwitterButton} from 'react-social-buttons'
 
+const env = process.env.NODE_ENV || 'development'
+const clientURL = env === 'production' ? 'https://adulting.herokuapp.com/'
+                                    :'http://localhost:5000'
+
 export default React.createClass({
   props: {
     id: React.PropTypes.number.isRequired,
@@ -21,17 +25,17 @@ export default React.createClass({
               </td>
               <td>{this.props.difficulty}</td>
               <td>{this.props.status}</td>
-              <td>{this.props.skillXp}</td>
+              <td>{this.props.skillXp} XP</td>
               <td>{this.props.showcaseURL}
                     <img id={this.props.id}
-                               className="deletebutton"
-                               src="./images/del32.png"
+                               className="delete-button"
+                               src="./images/delete.png"
                                id={this.props.video[0].video_id}
                                onClick={this.props.onDelete} />
               </td>
               <td>
                 <TwitterButton
-                  url={`http://localhost:5000/#/search/${this.props.id}`}
+                  url={`${clientURL}/#/search/${this.props.id}`}
                   text={`I've just learned ${this.props.skillName} #adulting # lifestack`} />
               </td>
             </tr>
@@ -46,7 +50,7 @@ export default React.createClass({
               <td></td>
               <td>
                 <TwitterButton
-                  url={`http://localhost:5000/#/search/${this.props.id}`}
+                  url={`${clientURL}/#/search/${this.props.id}`}
                   text={`I've just learned ${this.props.skillName} #adulting # lifestack`} />
               </td>
             </tr>

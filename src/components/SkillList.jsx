@@ -52,24 +52,26 @@ export default React.createClass({
     })
     return(
       <div className="skill-list">
-        <select
-          value={this.state.skill_id || ""}
-          onChange={this.onSelect}>
-          <option value="">Select a skill</option>
-          {options}
-        </select>
+        <div className="select-upload">
+          <select
+            value={this.state.skill_id || ""}
+            onChange={this.onSelect}>
+            <option value="">Select a skill</option>
+            {options}
+          </select>
 
-        <input
-          type="text"
-          placeholder="Upload a tutorial!"
-          value={this.state.url}
-          onChange={this.onInputChange} />
+          <input
+            className="upload-url"
+            type="text"
+            placeholder="Upload a tutorial!"
+            value={this.state.url}
+            onChange={this.onInputChange} />
 
-        <button
-          type="button"
-          onClick={this.onUploadSubmit}>
-        Upload</button>
-
+          <button
+            type="button"
+            onClick={this.onUploadSubmit}>
+          Upload</button>
+        </div>
 
         <table>
           <thead>

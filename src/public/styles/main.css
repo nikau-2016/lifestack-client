@@ -1,52 +1,86 @@
+/* ------------------- STYLIMUS PRIME ----------*/
+
 body {
   font-family: 'Baloo Tamma', cursive;
+  text-align: center;
   margin: 0;
-  display:block;
-  flex-direction: column;
-  align-items:center;
-  max width:700px;
 }
 
-.heading {
-text-decoration: none;
+.error {
+  color: red;
 }
-.search-skills {
-  font-size: 30px;
-  text-decoration: none;
-}
-.twitter-sign-in {
-  font-size: 20px;
 
-}
-header {
-  font-family: 'Baloo Tamma', cursive;
-  text-decoration: none;
-  background-color:#6AD4F7;
+/* ------------------- HEADER / FOOTER STYLE ----------*/
+
+footer {
+  padding: 2rem;
+  height:200px;
+  background-color:#08415C;
+  color: white;
   display:block;
   text-align: center;
-  width:100%;
-  top: 0;
-  left: 0;
-  right: 0;
 }
 
-.banner-image {
-  width:100%;
-  height:auto;
+footer a {
+  margin: 1rem;
 }
 
-h1 {
+.buttons {
+  display: flex;
+  flex-direction: column;
+  padding-right: 5rem;
+}
+
+.buttons a {
   text-decoration: none;
-  text color: black;
-  padding-top: 50px;
+}
+
+.buttons button {
+  background-color: white;
+  margin: 1rem;
+}
+
+h1 a {
+  text-decoration: none;
+  color: #EEE5E9;
+  margin-top: 30px;
+  display: block;
   font-family: 'Baloo Tamma', cursive;
   text-align: center;
   font-size:60px;
 }
 
-.twitter-sign-in {
-  text-decoration: none;
-  padding-left: 500px;
+header {
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Baloo Tamma', cursive;
+  background-color:#08415C;
+  text-align: center;
+  width:100%;
+}
+
+a {
+  margin-top:30px;
+  color: inherit;
+}
+
+.About {
+  display:inline-grid;
+  font-family: 'Fredoka One';
+  font-size: 30px;
+  margin:0 auto;
+  max-width: 100%;
+  padding: 40px 200px;
+  text-align: center;
+}
+
+.banner {
+  background-image: url("images/millenial-women-on-phone.jpg");
+  background-color: blue
+  color: #CC2936;
+  height:600px;
+  width:100%;
 }
 
 .mission-statement {
@@ -74,37 +108,251 @@ h1 {
 }
 
 .top-videos {
+  margin: 0;
   display:block;
-  margin:0 auto;
-  text-align: center;
+  align-items: center;
+  max width: 100%;
 }
 
-.top-videos div {
-  display: inline-block;
-  margin: 0 6px;
+.heading {
+  text-decoration: none;
 }
-
-iframe {
-  border: 0;
-}
-
-a {
-  margin-top:30px;
-  color: inherit;
-}
-footer {
-  height:200px;
-  background-color:#6AD4F7;
-  display:block;
-  text-align: center;}
 
 login.fields {
-  padding-top:100px;
-  padding-left:200px;
-  100px;
+    padding-top:100px;
+    padding-left:200px;
+    100px;
+  }
+
+.mission-statement {
+    color: #FFE100;
+    padding: 80px 0 0 75px;
+    font-family: 'Pacifico', cursive;
+    font-size: 40px;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+    text-align: left;
+  }
+
+  .top-videos {
+    background-color: #F1BF98;
+    display:block;
+    margin:0 auto;
+    text-align: center;
+  }
+
+  .top-videos div {
+    background-color: #F1BF98;
+    display: inline-block;
+    margin: 0 6px;
+  }
+
+  .top-videos-heading {
+    padding-top: 20px;
+  }
+
+.twitter-sign-in {
+    color: #EEE5E9;
+    font-size: 2.5em;
+    text-align: center;
+    text-decoration: none;
+  }
+
+/* --------------------- SKILL PAGE STYLING MAN ------------------------------ */
+
+.skillTitle {
+  color: black;
 }
 
-div.Dropdown-placeholder {
-  display:block;
-  margin:0,auto;
+.searchBar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+select {
+  font-size: 1.5em;
+  display: inline-flex;
+  margin-top: 2%;
+  flex-direction: row;
+}
+
+.cat {
+  width: 300px;
+  margin-right: 1%;
+  text-align-last: center;
+}
+
+.diff {
+  width: 300px;
+  margin-left: 1%;
+  margin-right: 1%;
+  text-align-last: center;
+}
+
+.skill {
+  width: 300px;
+  margin-left: 1%;
+  text-align-last: center;
+}
+
+.category {
+  font-size: 4em;
+
+}
+
+.difficulty {
+  font-size: 4em;
+}
+
+.tab {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.got-it-btn {
+  margin: auto;
+  width: 50%;
+}
+
+.skill-video {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 25px;
+  height: 720px;
+  flex-wrap: wrap;
+  margin-bottom: 10rem;
+}
+
+.voting-box {
+  flex-wrap: wrap;
+  margin-right: 3rem;
+}
+
+.skill-video p {
+  margin-right: 3rem;
+}
+
+.upvote {
+  margin-bottom: 1rem;
+}
+
+a.username {
+  margin-bottom: 100px;
+  z-index: 10;
+}
+
+.skill-video iframe {
+  width: 80%;
+  height: 100%;
+}
+
+.skill-video a, .skill-video p {
+  font-size: 2em;
+}
+/* ------------------- PROFILE / CONTRIBUTOR STYLE ----------*/
+
+.user-profile,
+.contributor-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ------------------- USER GAME STYLE ----------------------*/
+
+.skill-suggestion {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+  min-width: 600px;
+}
+
+.suggested-skill {
+  font-size: 3rem;
+}
+
+.suggestion-answer {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ------------------- USER SKILL LIST STYLE ---------------*/
+
+.skill-list .select-upload * {
+  margin-right: 1rem;
+}
+
+.upload-url {
+  width: 50%;
+}
+
+.delete-button {
+  top: 0;
+  width: 2rem;
+  margin-left: 1.5rem;
+}
+
+/* ------------------- USER GAME STYLE ----------------------*/
+
+.user-game {
+  display: flex;
+  flex-direction: row;
+  margin: 50px;
+}
+
+.profile-pic {
+  height: 100px;
+  border: 4px solid black;
+}
+
+.left {
+  height: 100px;
+  position: relative;
+}
+
+.right {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.level {
+  position: absolute;
+  bottom: 0px;
+  right: 10px;
+  font-size: 5rem;
+  color: #2e383c;
+}
+
+.user-name {
+  font-size: 2rem;
+  border-top: 4px solid black;
+  border-right: 4px solid black;
+  margin-bottom: 0;
+  padding-left: 1rem;
+}
+
+.levelXp {
+  border-right: 4px solid black;
+  border-top: 4px solid black;
+  border-bottom: 4px solid black;
+  margin-bottom: 0;
+  height: 30px;
+}
+
+.totalXp {
+  height: 22px;
+  border: 4px solid green;
+  background-color: green;
+  margin-bottom: 0;
+}
+
+.label {
+    padding-left: 1rem;
 }

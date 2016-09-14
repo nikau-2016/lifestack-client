@@ -56,16 +56,16 @@ export default React.createClass({
                       })
 
     return (
-      <div>
-        <select onChange={this.onCategorySelect} value={this.state.selectedCategory}>
+      <div className="searchBar">
+        <select className="cat" onChange={this.onCategorySelect} value={this.state.selectedCategory}>
           <option value="">Select a category</option>
           {categories}
         </select>
-        <select onChange={this.onDifficultySelect} value={this.state.selectedDifficulty}>
+        <select className="diff" onChange={this.onDifficultySelect} value={this.state.selectedDifficulty}>
           <option value="">Select a difficulty</option>
           {difficulties}
         </select>
-        <select onChange={this.onSkillSelect} value={this.state.selectedSkill}>
+        <select className="skill" onChange={this.onSkillSelect} value={this.state.selectedSkill}>
           <option value="Select a skill">Select a skill</option>
           {skills}
         </select>

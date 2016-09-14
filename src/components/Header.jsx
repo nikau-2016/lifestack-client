@@ -13,13 +13,17 @@ export default React.createClass({
         <div>
           <header>
             <h1><Link className="heading" to={'/'}>#adulting</Link></h1>
-            <Link className="search-skills" to={'/search'}>Search</Link>
-            <a className="twitter-sign-in" href="http://localhost:3000/auth/twitter">Log in with Twitter</a>
+            <div className="buttons">
+              <button><a className="twitter-sign-in" href="http://localhost:3000/auth/twitter">Log in with Twitter</a></button>
+              <button><Link className="search-home" to={'/search'}>Search</Link></button>
+            </div>
           </header>
-
-          <div>
-            {this.props.children}
-          </div>
+          {this.props.children}
+          <footer>
+            Check out our code on Github! <br />
+            <a href="https://github.com/nikau-2016/lifestack.git">Back-End</a>
+            <a href="https://github.com/nikau-2016/lifestack-client.git">Front-End</a>
+          </footer>
         </div>
       )
     } else {
@@ -27,13 +31,20 @@ export default React.createClass({
         <div>
           <header>
             <h1><Link to={'/'}>#adulting</Link></h1>
-            <Link to={'/search'}>Search</Link>
-            <button onClick={this.props.onProfile}>Profile</button>
-            <button onClick={this.props.onLogout}>Logout</button>
+            <div className="buttons">
+              <button onClick={this.props.onLogout}>Logout</button>
+              <div>
+                <button><Link className="search-home" to={'/search'}>Search</Link></button>
+                <button onClick={this.props.onProfile}>Profile</button>
+              </div>
+            </div>
           </header>
-          <div>
-            {this.props.children}
-          </div>
+          {this.props.children}
+          <footer>
+            Check out our code on Github! <br />
+            <a href="https://github.com/nikau-2016/lifestack.git">Back-End</a>
+            <a href="https://github.com/nikau-2016/lifestack-client.git">Front-End</a>
+          </footer>
         </div>
       )
     }
