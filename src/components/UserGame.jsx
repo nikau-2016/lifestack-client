@@ -11,11 +11,12 @@ export default React.createClass({
     },
     render () {
       const widthInPx = 400
-      const totalXpStyle = {
+      const remainingXPWidth = String((100 - this.props.remainingXp) / 100 * widthInPx)
+      const levelXpStyle = {
         width: widthInPx + "px"
       }
-      const levelXpStyle = {
-        width: String((100 - this.props.remainingXp) / 100 * widthInPx) + "px"
+      const totalXpStyle = {
+        width: remainingXPWidth + "px"
       }
 
         return (
@@ -27,11 +28,11 @@ export default React.createClass({
 
                 <div className="right">
                   <div>
-                    <p className = "user-name">{this.props.username}</p>
+                    <div className = "user-name">{this.props.username}</div>
                   </div>
-                  <div className="levelXp" style={totalXpStyle}>
-                    <div className="totalXp" style={levelXpStyle}>
-                    <p className="label">{`${this.props.totalXp} / ${this.props.totalXp + this.props.remainingXp} XP`}</p>
+                  <div className="levelXp" style={levelXpStyle}>
+                    <div className="totalXp" style={totalXpStyle}>
+                    <div className="label" style={levelXpStyle}>{`${this.props.totalXp} / ${this.props.totalXp + this.props.remainingXp} XP`}</div>
                     </div>
                   </div>
                 </div>

@@ -11,7 +11,6 @@ export default React.createClass({
       this.props.onLoad(this.props.params.id)
     },
     render () {
-      console.log('contributor', this.props.contributor.skillList)
       const skillList = this.props.contributor.skillList.map(elem => {
           return <tr key={elem.id} className="contributor-skill" id={elem.id}>
           <td>{elem.skillName}</td>
@@ -25,7 +24,7 @@ export default React.createClass({
             <div className="contributor-profile">
                 <UserGame
                     id={this.props.contributor.id}
-                    userrname={this.props.contributor.username}
+                    username={this.props.contributor.username}
                     profile_pic={this.props.contributor.profile_pic}level ={this.props.contributor.level}
                     totalXp ={this.props.contributor.totalXp}
                     remainingXp ={this.props.contributor.remainingXp} />

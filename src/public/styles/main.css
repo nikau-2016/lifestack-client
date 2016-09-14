@@ -136,6 +136,7 @@ div.Dropdown-placeholder {
   bottom: 0px;
   right: 10px;
   font-size: 5rem;
+  color: red;
 }
 
 .user-name {
