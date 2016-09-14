@@ -351,6 +351,10 @@ a:hover {
   background-color: #9388bb;
 }
 
+.select-upload {
+  font-family: none;
+}
+
 .levelXp {
   border-right: 4px solid #2465bd;
   border-top: 4px solid #2465bd;
