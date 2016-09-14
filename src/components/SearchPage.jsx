@@ -43,7 +43,7 @@ export default React.createClass({
         <section>
           <div className="error">{this.props.error}</div>
           <Searchbar options={this.state.options} onSelected={this.props.onSelected}/>
-          <h1>{this.props.skill.skillName}</h1>
+          <h1 className="skillTitle">{this.props.skill.skillName}</h1>
           <div className="category">{this.props.skill.category}</div>
           <div className="difficulty">{this.props.skill.difficulty}</div>
           <Tab

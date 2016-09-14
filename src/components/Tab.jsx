@@ -67,6 +67,7 @@ export default React.createClass({
           return (
             <div className="tab">
             <button
+            className="got-it-btn"
             name={this.props.skillId}
             onClick={this.props.onWatchedSkill}>Got It!</button>
               {videos}
