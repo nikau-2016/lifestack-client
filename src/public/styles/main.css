@@ -1,54 +1,35 @@
+a {
+  margin-top:30px;
+  color: inherit;
+}
+
+.About {
+  display:inline-grid;
+  font-family: 'Fredoka One';
+  font-size: 30px;
+  margin:0 auto;
+  max-width: 100%;
+  padding: 40px 200px;
+  text-align: center;
+}
+
+.banner {
+  background-image: url("images/millenial-women-on-phone.jpg");
+  background-color: blue
+  color: #CC2936;
+  height:600px;
+  width:100%;
+}
+
 body {
   font-family: 'Baloo Tamma', cursive;
-  margin: 0;
-  display:block;
-  flex-direction: column;
-  align-items:center;
-  max width:700px;
-}
-
-.heading {
-text-decoration: none;
-}
-.search-skills {
-  font-size: 30px;
-  text-decoration: none;
-}
-.twitter-sign-in {
-  font-size: 20px;
-
-}
-header {
-  font-family: 'Baloo Tamma', cursive;
-  text-decoration: none;
-  background-color:#6AD4F7;
-  display:block;
   text-align: center;
-  width:100%;
-  top: 0;
-  left: 0;
-  right: 0;
-}
-
-.banner-image {
-  width:100%;
-  height:auto;
-}
-
-h1 {
-  text-decoration: none;
-  text color: black;
-  padding-top: 50px;
-  font-family: 'Baloo Tamma', cursive;
-  text-align: center;
-  font-size:60px;
 }
 
 .twitter-sign-in {
   text-decoration: none;
   padding-left: 500px;
 }
-
 
 .mission-statement {
   background: url(images/millenial-women-on-phone.jpg) no-repeat;
@@ -75,35 +56,96 @@ h1 {
 }
 
 .top-videos {
+  margin: 0;
   display:block;
-  margin:0 auto;
-  text-align: center;
+  align-items: center;
+  max width: 100%;
 }
 
-.top-videos div {
-  display: inline-block;
-  margin: 0 6px;
+.buttons {
+  background-color: #CC2936
 }
 
-iframe {
-  border: 0;
+.heading {
+  text-decoration: none;
 }
 
-a {
-  margin-top:30px;
-  color: inherit;
-}
 footer {
   height:200px;
-  background-color:#6AD4F7;
+  background-color:#08415C;
   display:block;
   text-align: center;}
 
+h1 {
+    text-decoration: none;
+    color: #EEE5E9;
+    padding-top: 50px;
+    font-family: 'Baloo Tamma', cursive;
+    text-align: center;
+    font-size:60px;
+  }
+
+header {
+    font-family: 'Baloo Tamma', cursive;
+    background-color:#08415C;
+    text-align: center;
+    width:100%;
+  }
+
+iframe {
+    border: 0;
+  }
+
 login.fields {
-  padding-top:100px;
-  padding-left:200px;
-  100px;
-}
+    padding-top:100px;
+    padding-left:200px;
+    100px;
+  }
+
+.mission-statement {
+    color: #FFE100;
+    padding: 80px 0 0 75px;
+    font-family: 'Pacifico', cursive;
+    font-size: 40px;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+    text-align: left;
+  }
+
+.search-home {
+    color: #EEE5E9;
+    font-size: 2.5em;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .twitter-box {
+    background-color: green;
+  }
+
+  .top-videos {
+    background-color: #F1BF98;
+    display:block;
+    margin:0 auto;
+    text-align: center;
+  }
+
+  .top-videos div {
+    background-color: #F1BF98;
+    display: inline-block;
+    margin: 0 6px;
+  }
+
+  .top-videos-heading {
+    padding-top: 20px;
+  }
+
+.twitter-sign-in {
+    color: #EEE5E9;
+    font-size: 2.5em;
+    text-align: center;
+    text-decoration: none;
+  }
+
 
 div.Dropdown-placeholder {
   display:block;
@@ -162,6 +204,7 @@ div.Dropdown-placeholder {
   flex-direction: row;
   margin: 50px;
 }
+
 .profile-pic {
   height: 100px;
   border: 4px solid black;

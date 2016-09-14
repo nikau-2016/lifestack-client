@@ -56,7 +56,7 @@ export default React.createClass({
                       })
 
     return (
-      <div>
+      <div className="searchBar">
         <select onChange={this.onCategorySelect} value={this.state.selectedCategory}>
           <option value="">Select a category</option>
           {categories}
