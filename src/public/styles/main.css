@@ -270,11 +270,12 @@ a.username {
 /* ------------------- USER SKILL LIST STYLE ---------------*/
 
 .skill-list .select-upload * {
+  display: inline-block;
   margin-right: 1rem;
 }
 
 .upload-url {
-  width: 50%;
+  width: 30%;
 }
 
 .delete-button {
