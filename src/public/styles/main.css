@@ -160,7 +160,6 @@ login.fields {
 
 select {
   font-size: 1.5em;
-  font-family: 'Fredoka One';
   display: inline-flex;
   margin-top: 2%;
   flex-direction: row;
@@ -193,10 +192,30 @@ select {
   font-size: 4em;
 }
 
-section {
+.tab {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
 }
 
+.skill-video {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 25px;
+  height: 720px;
+}
+
+.skill-video iframe {
+  width: 80%;
+  height: 100%;
+}
+
+.skill-video a, .skill-video p {
+  font-size: 2em;
+}
 /* ------------------- PROFILE / CONTRIBUTOR STYLE ----------*/
 
 .user-profile,

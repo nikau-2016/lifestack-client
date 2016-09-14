@@ -12,7 +12,7 @@ export default React.createClass({
     if (this.props.userId === 0) {
       return (
         <div className="skill-video">
-          <iframe src={this.props.video.url} allowFullScreen></iframe>
+          <iframe src={this.props.video.url} width="1280" height="720" allowFullScreen></iframe>
           <Link to={`/contributor/${this.props.video.user_details.user_id}`} className="username">Uploaded by {this.props.video.user_details.username}</Link>
           <p className="votes">{this.props.video.votes} votes</p>
         </div>
@@ -20,7 +20,7 @@ export default React.createClass({
     } else {
       return (
         <div className="skill-video">
-          <iframe src={this.props.video.url} allowFullScreen></iframe>
+          <iframe src={this.props.video.url} width="1280" height="720" allowFullScreen></iframe>
           <Link to={`/contributor/${this.props.video.user_details.user_id}`} className="username">Uploaded by {this.props.video.user_details.username}</Link>
           <div>
             <img id={this.props.video.id}
