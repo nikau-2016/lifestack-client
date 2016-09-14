@@ -3,13 +3,13 @@ import {Link} from 'react-router'
 
 export default React.createClass({
   props: {
-    userId: React.PropTypes.number.isRequired,
+    user: React.PropTypes.object.isRequired,
     video: React.PropTypes.func.isRequired,
     onUpvote: React.PropTypes.func.isRequired,
     onDownvote: React.PropTypes.func.isRequired
   },
   render () {
-    if (this.props.userId === 0) {
+    if (this.props.user.id === 0) {
       return (
         <div className="skill-video">
           <p className="votes">{this.props.video.votes} votes</p>
