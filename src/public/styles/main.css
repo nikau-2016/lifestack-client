@@ -146,20 +146,55 @@ login.fields {
     text-decoration: none;
   }
 
+/* --------------------- SKILL PAGE STYLING MAN ------------------------------ */
+
 .skillTitle {
   color: black;
 }
 
 .searchBar {
   display: flex;
-  justify-content: space-around;
-
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 select {
   font-size: 1.5em;
   font-family: 'Fredoka One';
   display: inline-flex;
+  margin-top: 2%;
+  flex-direction: row;
+}
+
+.cat {
+  width: 300px;
+  margin-right: 1%;
+  text-align-last: center;
+}
+
+.diff {
+  width: 300px;
+  margin-left: 1%;
+  margin-right: 1%;
+  text-align-last: center;
+}
+
+.skill {
+  width: 300px;
+  margin-left: 1%;
+  text-align-last: center;
+}
+
+.category {
+  font-size: 4em;
+}
+
+.difficulty {
+  font-size: 4em;
+}
+
+section {
+
 }
 
 /* ------------------- PROFILE / CONTRIBUTOR STYLE ----------*/
