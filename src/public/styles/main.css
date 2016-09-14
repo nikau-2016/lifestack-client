@@ -143,10 +143,11 @@ div.Dropdown-placeholder {
   max width: 100%;
 }
 
-/* --------------------- SKILL PAGE STYLING MAN ------------------------------ */
+/* --------------------- SKILL PAGE STYLING ------------------------------ */
 
 .skillTitle {
   color: black;
+  margin-top: 2%;
 }
 
 .searchBar {
@@ -181,20 +182,23 @@ select {
   text-align-last: center;
 }
 
-.category {
-  font-size: 4em;
+.diff-cat {
+  display: inline-flex;
+  justify-content: center;
+}
 
+.category {
+  margin-right: 10%;
 }
 
 .difficulty {
-  font-size: 4em;
+  margin-left: 10%;
 }
 
 .tab {
   display: flex;
   flex-direction: column;
   justify-content: center;
-
 }
 
 .got-it-btn {
@@ -207,9 +211,10 @@ select {
   align-items: center;
   justify-content: center;
   padding-top: 25px;
-  height: 720px;
+  height: 600px;
   flex-wrap: wrap;
   margin-bottom: 10rem;
+  margin-right: 6%;
 }
 
 .voting-box {
@@ -219,6 +224,7 @@ select {
 
 .skill-video p {
   margin-right: 3rem;
+  font-size: 2em;
 }
 
 .upvote {
@@ -226,8 +232,17 @@ select {
 }
 
 a.username {
-  margin-bottom: 100px;
-  z-index: 10;
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
+  text-decoration: none;
+  font-size: 2em;
+  margin-right: 37.5%;
+  color: black;
+
+}
+
+a:hover {
+  color: #1eaedb;
 }
 
 .skill-video iframe {
@@ -235,9 +250,11 @@ a.username {
   height: 100%;
 }
 
-.skill-video a, .skill-video p {
-  font-size: 2em;
+#disqus_thread {
+  margin-left: 2.5%;
+  margin-right: 2.5%;
 }
+
 /* ------------------- PROFILE / CONTRIBUTOR STYLE ----------*/
 
 .user-profile,
