@@ -39,6 +39,7 @@ export const changeStatus = (skill_id, status) => {
   return function (dispatch, getState) {
     request
       .put(`${url}/v1/users/${getState().user.id}/status`)
+      .withCredentials()
       .send({status: status, skill_id: skill_id})
       .end((err, res) => {
         if (err) {
@@ -86,6 +87,7 @@ export const uploadShowcase = (skill_id, tutorialUrl) => {
     const id = getState().user.id
     request
       .put(`${url}/v1/users/${id}/tutorial`)
+      .withCredentials()
       .send({
         skill_id: skill_id,
         tutorial: tutorialUrl
@@ -127,6 +129,7 @@ export const upVote = (video_id) => {
     const user_id = getState().user.id
     request
       .put(`${url}/v1/skills/${id}/upvote/${video_id}`)
+      .withCredentials()
       .send({
         user_id: user_id
       })
@@ -143,11 +146,12 @@ export const upVote = (video_id) => {
 
 export const downVote = (video_id) => {
   return (dispatch, getState) => {
-      const test = `${url}/v1/videos/${video_id}`
+    const test = `${url}/v1/videos/${video_id}`
     const id = getState().search.id
     const user_id = getState().user.id
     request
       .put(`${url}/v1/skills/${id}/downvote/${video_id}`)
+      .withCredentials()
       .send({
         user_id: user_id
       })
@@ -167,6 +171,7 @@ export const deleteVideo = (video_id) => {
       const id = getState().user.id
       request
         .delete(`${url}/v1/users/${id}/videos/${video_id}`)
+        .withCredentials()
         .end((err, res) => {
           if (err) {
             dispatch(setError(res.body.error || "Oops, something went wrong!"))
@@ -182,6 +187,7 @@ export const logout = (userId) => {
   return (dispatch) => {
     request
       .get(`${url}/logout`)
+      .withCredentials()
       .end((err, res) => {
         if (err) {
           dispatch(setError(res.body.error || "Oops, something went wrong!"))
