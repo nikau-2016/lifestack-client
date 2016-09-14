@@ -28,11 +28,15 @@ export default React.createClass({
                   profile_pic={this.props.user.profile_pic}level ={this.props.user.level}
                   totalXp ={this.props.user.totalXp}
                   remainingXp ={this.props.user.remainingXp} />
-                <div>
-                  Want to learn {this.props.randomSkill.skillName}? <br />
-                  <span id={this.props.randomSkill.id} onClick={this.props.onSkill}>YES!</span><br />
-                  <span onClick={this.getRandom}>Show me another skill</span>
+
+                <div className="skill-suggestion">
+                  <div className="suggested-skill">Want to learn {this.props.randomSkill.skillName}?</div>
+                  <div className="suggestion-answer">
+                    <span id={this.props.randomSkill.id} onClick={this.props.onSkill}>YES, Show me the skill page!</span>
+                    <span onClick={this.getRandom}>NO, Show me another skill!</span>
+                  </div>
                 </div>
+
                 <SkillList skillList={this.props.user.skillList}
                            onSkill={this.props.onSkill}
                            onClickUpload={this.props.onClickUpload}
