@@ -25,8 +25,8 @@ export default React.createClass({
                 </section>
                 <div className="about row">
                         <div className="about-paragraph1 six columns">
-                        Whether you want to master the art of cooking an egg, become a pro at changing a tyre or simply learn a new skill, #adulting provides the tools and resources to move you through your 20's with ever increasing confidence. #adulting is a platform for millennials to upload, share and view tutorial style videos of themselves attempting to master simple life skills they never learned in school.
-                         #adulting is gamified; there are three levels and members earn points via a time-tested, patented process of watch, contribute and master. #adulting empowers you to progressively solve new challenges and make your life simpler and more satisfying.
+                        Whether you want to master the art of cooking an egg, become a pro at changing a tyre or simply learn a new skill, #adulting provides the tools and resources to move you through your 20's with ever increasing confidence.<br /><br /> #adulting is a platform for millennials to upload, share and view tutorial style videos of themselves attempting to master simple life skills they never learned in school.
+                         <br /><br /> #adulting is gamified; there are three levels and members earn points via a time-tested, patented process of watch, contribute and master. #adulting empowers you to progressively solve new challenges and make your life simpler and more satisfying.
                     </div>
                     <div className="six columns">
                     <Timeline
