@@ -16,7 +16,8 @@ export default React.createClass({
         onUpvote: React.PropTypes.func.isRequired,
         onDownvote: React.PropTypes.func.isRequired,
         userId: React.PropTypes.number.isRequired,
-        onLoad: React.PropTypes.func.isRequired
+        onLoad: React.PropTypes.func.isRequired,
+        error: React.PropTypes.string.isRequired
     },
     componentWillMount () {
       request
@@ -40,6 +41,7 @@ export default React.createClass({
     render () {
       return (
         <section>
+          <div className="error">{this.props.error}</div>
           <Searchbar options={this.state.options} onSelected={this.props.onSelected}/>
           <h1 className="skillTitle">{this.props.skill.skillName}</h1>
           <div className="category">{this.props.skill.category}</div>

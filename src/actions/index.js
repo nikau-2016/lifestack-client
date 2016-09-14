@@ -5,6 +5,13 @@ const env = process.env.NODE_ENV || 'development'
 const url = env === 'production' ? 'https://adulting-server.herokuapp.com'
                                     :'http://localhost:3000'
 
+const setError = (err) => {
+  return {
+    type: "SET_ERROR",
+    error: err
+  }
+}
+
 const updateSearch = (skill) => {
   return {
     type: "UPDATE_SEARCH",
@@ -18,8 +25,8 @@ export const retrieveSkill = (id) => {
       .get(`${url}/v1/skills/${id}`)
       .end((err, res) => {
         if (err) {
-          // ERROR HANDLING HERE
-          console.log(err)
+          dispatch(setError(res.body.error || "Oops, something went wrong!"))
+          setTimeout(() => dispatch(setError("")), 3000)
         } else {
           dispatch(updateSearch(res.body.data))
           dispatch(push(`/search/${id}`))
@@ -35,7 +42,8 @@ export const changeStatus = (skill_id, status) => {
       .send({status: status, skill_id: skill_id})
       .end((err, res) => {
         if (err) {
-          console.log(err)
+          dispatch(setError(res.body.error || "Oops, something went wrong!"))
+          setTimeout(() => dispatch(setError("")), 3000)
         } else {
           dispatch(push(`/profile/${getState().user.id}`))
         }
@@ -49,10 +57,10 @@ export const getUserDetails = (id) => {
       .get(`${url}/v1/users/${id}`)
       .end((err, res) => {
         if (err) {
-          // ERROR HANDLING HERE
-          console.log(err)
+          dispatch(setError(res.body.error || "Oops, something went wrong!"))
+          setTimeout(() => dispatch(setError("")), 3000)
         } else {
-          dispatch(setUser(res.body.data))
+            dispatch(setUser(res.body.data))
         }
       })
   }
@@ -64,8 +72,8 @@ export const getContributorDetails = (id) => {
       .get(`${url}/v1/users/${id}`)
       .end((err, res) => {
         if (err) {
-          // ERROR HANDLING HERE
-          console.log(err)
+          dispatch(setError(res.body.error || "Oops, something went wrong!"))
+          setTimeout(() => dispatch(setError("")), 3000)
         } else {
           dispatch(setContributor(res.body.data))
         }
@@ -84,8 +92,8 @@ export const uploadShowcase = (skill_id, tutorialUrl) => {
       })
       .end((err, res) => {
         if (err) {
-          // ERROR HANDLING HERE
-          console.log(err)
+          dispatch(setError(res.body.error || "Oops, something went wrong!"))
+          setTimeout(() => dispatch(setError("")), 3000)
         } else {
           dispatch(setUser(res.body.data))
         }
@@ -124,8 +132,8 @@ export const upVote = (video_id) => {
       })
       .end((err, res) => {
         if (err) {
-          // ERROR HANDLING HERE
-          console.log(err)
+          dispatch(setError(res.body.error || "Oops, something went wrong!"))
+          setTimeout(() => dispatch(setError("")), 3000)
         } else {
           dispatch(updateSearch(res.body.data))
         }
@@ -145,8 +153,8 @@ export const downVote = (video_id) => {
       })
       .end((err, res) => {
         if (err) {
-          // ERROR HANDLING HERE
-          console.log(err)
+          dispatch(setError(res.body.error || "Oops, something went wrong!"))
+          setTimeout(() => dispatch(setError("")), 3000)
         } else {
           dispatch(updateSearch(res.body.data))
         }
@@ -161,8 +169,8 @@ export const deleteVideo = (video_id) => {
         .delete(`${url}/v1/users/${id}/videos/${video_id}`)
         .end((err, res) => {
           if (err) {
-            // ERROR HANDLING HERE
-            console.log(err)
+            dispatch(setError(res.body.error || "Oops, something went wrong!"))
+            setTimeout(() => dispatch(setError("")), 3000)
           } else {
             dispatch(setUser(res.body.data))
           }
@@ -176,7 +184,8 @@ export const logout = (userId) => {
       .get(`${url}/logout`)
       .end((err, res) => {
         if (err) {
-          console.log(err)
+          dispatch(setError(res.body.error || "Oops, something went wrong!"))
+          setTimeout(() => dispatch(setError("")), 3000)
         } else {
           dispatch(resetUser())
           dispatch(push('/'))
@@ -204,7 +213,8 @@ export const getRandom = (id) => {
       .get(`${url}/v1/users/${id}/random`)
       .end((err, res) => {
         if (err || !res.body.data) {
-          return
+          dispatch(setError(res.body.error || "Oops, something went wrong!"))
+          setTimeout(() => dispatch(setError("")), 3000)
         }
           dispatch(updateRandom(res.body.data))
       })
