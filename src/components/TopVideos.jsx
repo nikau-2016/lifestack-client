@@ -1,9 +1,7 @@
 import React from 'react'
 import request from 'superagent'
 
-const env = process.env.NODE_ENV || 'development'
-const url = env === 'production' ? 'placeholderURL'
-                                    :'http://localhost:3000/'
+const url = 'https://adulting-server.herokuapp.com'
 
 export default React.createClass({
     getInitialState () {

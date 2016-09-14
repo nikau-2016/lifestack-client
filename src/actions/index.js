@@ -1,9 +1,7 @@
 import request from 'superagent'
 import {push} from 'react-router-redux'
 
-const env = process.env.NODE_ENV || 'development'
-const url = env === 'production' ? 'https://adulting-server.herokuapp.com'
-                                    :'http://localhost:3000'
+const url = 'https://adulting-server.herokuapp.com'
 
 const setError = (err) => {
   return {

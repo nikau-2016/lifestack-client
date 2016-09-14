@@ -1,9 +1,7 @@
 import React from 'react'
 import {TwitterButton} from 'react-social-buttons'
 
-const env = process.env.NODE_ENV || 'development'
-const clientURL = env === 'production' ? 'https://adulting.herokuapp.com/'
-                                    :'http://localhost:5000'
+const clientURL = 'https://adulting.herokuapp.com/'
 
 export default React.createClass({
   props: {

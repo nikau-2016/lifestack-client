@@ -2,9 +2,7 @@ import React from 'react'
 import SkillVideo from './SkillVideo'
 import ReactDisqusThread from 'react-disqus-thread'
 
-const env = process.env.NODE_ENV || 'development'
-const clientURL = env === 'production' ? 'https://adulting.herokuapp.com/'
-                                    :'http://localhost:5000'
+const clientURL = 'https://adulting.herokuapp.com/'
 
 export default React.createClass({
   props: {
