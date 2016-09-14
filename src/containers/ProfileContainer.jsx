@@ -7,7 +7,8 @@ import {getUserDetails, uploadShowcase, getRandom, retrieveSkill, deleteVideo} f
 const mapStateToProps = (state) => {
   return {
     user: state.user,
-    randomSkill: state.random
+    randomSkill: state.random,
+    error: state.error
   }
 }
 

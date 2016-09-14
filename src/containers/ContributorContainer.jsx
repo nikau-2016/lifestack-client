@@ -6,7 +6,8 @@ import {getContributorDetails} from '../actions'
 
 const mapStateToProps = (state) => {
   return {
-    contributor: state.contributor
+    contributor: state.contributor,
+    error: state.error
   }
 }
 

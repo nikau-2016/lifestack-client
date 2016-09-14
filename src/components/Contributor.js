@@ -6,6 +6,7 @@ export default React.createClass({
       params: React.PropTypes.object.isRequired,
       contributor: React.PropTypes.object.isRequired,
       onLoad: React.PropTypes.func.isRequired,
+      error: React.PropTypes.string.isRequired
     },
     componentWillMount () {
       this.props.onLoad(this.props.params.id)
@@ -22,6 +23,7 @@ export default React.createClass({
 
         return (
             <div className="contributor-profile">
+                <div className="error">{this.props.error}</div>
                 <UserGame
                     id={this.props.contributor.id}
                     username={this.props.contributor.username}

@@ -3,6 +3,9 @@ import TopVideos from './TopVideos'
 import { Timeline } from 'react-twitter-widgets'
 
 export default React.createClass({
+    props: {
+      error: React.PropTypes.string.isRequired
+    },
     getInitialState () {
         return {
             topVideos: []
@@ -11,6 +14,7 @@ export default React.createClass({
     render () {
         return (
             <div className="Home row">
+                <div className="error">{this.props.error}</div>
                 <div className="banner row">
                   <section className="mission-statement four columns"> "Life skills for millenials". Whether you need to fix, build, create or learn. Lifestack gives you practical solutions to the problems life throws at you."
                   </section>
