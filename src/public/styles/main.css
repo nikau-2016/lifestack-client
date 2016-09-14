@@ -118,18 +118,12 @@ login.fields {
     padding-top: 20px;
   }
 
-.top3-videos {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 25px;
-  height: 480px;
-}
-
-.top3-videos iframe {
-  width: 100%;
-  height: 100%;
-}
+  .top-videos {
+    margin: 0;
+    display:block;
+    align-items: center;
+    max width: 100%;
+  }
 
 div.Dropdown-placeholder {
   display:block;
