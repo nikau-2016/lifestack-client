@@ -3,7 +3,7 @@ import request from 'superagent'
 import Tab from './Tab'
 import Searchbar from './Searchbar'
 
-const url = 'http://localhost:3000'
+const url = 'https://adulting-server.herokuapp.com'
 
 export default React.createClass({
     props: {
