@@ -18,10 +18,10 @@ export default React.createClass({
             <a className="twitter-sign-in four columns" href="http://localhost:3000/auth/twitter">Log in with Twitter</a>
             </div>
           </header>
-
-          <div>
-            {this.props.children}
-          </div>
+          {this.props.children}
+          <footer>
+            footer needing content
+          </footer>
         </div>
       )
     } else {
@@ -33,9 +33,10 @@ export default React.createClass({
             <button onClick={this.props.onProfile}>Profile</button>
             <button onClick={this.props.onLogout}>Logout</button>
           </header>
-          <div>
-            {this.props.children}
-          </div>
+          {this.props.children}
+          <footer>
+            footer needing content
+          </footer>
         </div>
       )
     }
