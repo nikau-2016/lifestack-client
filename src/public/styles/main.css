@@ -163,7 +163,7 @@ div.Dropdown-placeholder {
   flex-wrap: wrap;
 }
 
-select {
+.searchBar select {
   font-size: 1.5em;
   display: inline-flex;
   margin-top: 2%;
