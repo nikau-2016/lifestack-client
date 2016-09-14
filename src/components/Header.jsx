@@ -12,9 +12,11 @@ export default React.createClass({
       return (
         <div>
           <header>
-            <h1><Link className="heading" to={'/'}>#adulting</Link></h1>
-            <Link className="search-skills" to={'/search'}>Search</Link>
-            <a className="twitter-sign-in" href="http://localhost:3000/auth/twitter">Log in with Twitter</a>
+            <h1><Link className="heading row" to={'/'}>#adulting</Link></h1>
+            <div className="buttons row">
+            <Link className="search-home seven columns" to={'/search'}>Search</Link>
+            <a className="twitter-sign-in four columns" href="http://localhost:3000/auth/twitter">Log in with Twitter</a>
+            </div>
           </header>
 
           <div>
@@ -27,7 +29,7 @@ export default React.createClass({
         <div>
           <header>
             <h1><Link to={'/'}>#adulting</Link></h1>
-            <Link to={'/search'}>Search</Link>
+            <Link className="search-logged-in" to={'/search'}>Search</Link>
             <button onClick={this.props.onProfile}>Profile</button>
             <button onClick={this.props.onLogout}>Logout</button>
           </header>
