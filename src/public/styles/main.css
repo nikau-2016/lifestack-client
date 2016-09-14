@@ -86,7 +86,9 @@ header {
   height:600px;
   width:100%;
 }
-
+.hash {
+  font-size: 8rem;
+}
 .mission-statement {
   height:400px;
   margin: 0 auto;
