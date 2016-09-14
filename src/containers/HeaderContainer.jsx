@@ -3,6 +3,13 @@ import Header from '../components/Header'
 import {connect} from 'react-redux'
 import {logout, displayProfile} from '../actions'
 
+const mapStateToProps = (state) => {
+  return {
+    userId: state.user.id,
+    error: state.error
+  }
+}
+
 const mapDispatchToProps = (dispatch) => {
   return {
     onProfile: () => {
@@ -11,12 +18,6 @@ const mapDispatchToProps = (dispatch) => {
     onLogout: (userId) => {
       dispatch(logout(userId))
     }
-  }
-}
-
-const mapStateToProps = (state) => {
-  return {
-    userId: state.user.id
   }
 }
 
