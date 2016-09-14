@@ -81,6 +81,7 @@ export default React.createClass({
               <th>Status</th>
               <th>XP</th>
               <th>Tutorial</th>
+              <td></td>
             </tr>
           </thead>
           <tbody>
