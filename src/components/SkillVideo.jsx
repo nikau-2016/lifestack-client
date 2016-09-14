@@ -21,12 +21,12 @@ export default React.createClass({
       return (
         <div className="skill-video">
           <div className="voting-box">
-            <img id={this.props.video.id}
+            <input type="image" img id={this.props.video.id}
             className="upvote"
             src="./images/up.png"
             onClick={this.props.onUpvote} />
             <p className="votes">{this.props.video.votes} votes</p>
-            <img id={this.props.video.id}
+            <input type="image" id={this.props.video.id}
             className="downvote"
             src="./images/down.png"
             onClick={this.props.onDownvote} />
