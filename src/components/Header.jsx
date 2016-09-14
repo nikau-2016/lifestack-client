@@ -15,7 +15,7 @@ export default React.createClass({
             <h1><Link className="heading" to={'/'}>#adulting</Link></h1>
             <div className="buttons">
               <button><Link className="search-home" to={'/search'}>Search</Link></button>
-              <button><a className="twitter-sign-in" href="http://localhost:3000/auth/twitter">Log in with Twitter</a></button>
+              <button><a className="twitter-sign-in" href="http://adulting-server.herokuapp.com/auth/twitter">Log in with Twitter</a></button>
             </div>
           </header>
           {this.props.children}

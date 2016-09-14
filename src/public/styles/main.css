@@ -201,10 +201,12 @@ div.Dropdown-placeholder {
 }
 
 .category {
+  font-size: 2rem;
   margin-right: 10%;
 }
 
 .difficulty {
+  font-size: 2rem;
   margin-left: 10%;
 }
 

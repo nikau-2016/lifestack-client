@@ -1,7 +1,7 @@
 import React from 'react'
 import request from 'superagent'
 
-const url = 'http://localhost:3000'
+const url = 'https://adulting-server.herokuapp.com'
 
 export default React.createClass({
     getInitialState () {

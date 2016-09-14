@@ -1,7 +1,7 @@
 import request from 'superagent'
 import {push} from 'react-router-redux'
 
-const url = 'http://localhost:3000'
+const url = 'https://adulting-server.herokuapp.com'
 
 const setError = (err) => {
   return {
