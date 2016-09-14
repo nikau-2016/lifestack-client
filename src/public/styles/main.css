@@ -156,7 +156,7 @@ div.Dropdown-placeholder {
   flex-wrap: wrap;
 }
 
-select {
+.searchBar select {
   font-size: 1.5em;
   display: inline-flex;
   margin-top: 2%;
@@ -349,10 +349,6 @@ a:hover {
 .select-upload button {
   color: white;
   background-color: #9388bb;
-}
-
-.select-upload {
-  font-family: none;
 }
 
 .levelXp {
