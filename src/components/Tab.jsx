@@ -2,7 +2,7 @@ import React from 'react'
 import SkillVideo from './SkillVideo'
 import ReactDisqusThread from 'react-disqus-thread'
 
-const clientURL = 'https://adulting.herokuapp.com/'
+const clientURL = 'https://adulting.herokuapp.com'
 
 export default React.createClass({
   props: {

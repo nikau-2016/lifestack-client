@@ -1,7 +1,7 @@
 import React from 'react'
 import {TwitterButton} from 'react-social-buttons'
 
-const clientURL = 'https://adulting.herokuapp.com/'
+const clientURL = 'https://adulting.herokuapp.com'
 
 export default React.createClass({
   props: {
