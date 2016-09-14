@@ -16,10 +16,10 @@ export default React.createClass({
             <Link className="search-skills" to={'/search'}>Search</Link>
             <a className="twitter-sign-in" href="http://localhost:3000/auth/twitter">Log in with Twitter</a>
           </header>
-
-          <div>
-            {this.props.children}
-          </div>
+          {this.props.children}
+          <footer>
+            footer needing content
+          </footer>
         </div>
       )
     } else {
@@ -31,9 +31,10 @@ export default React.createClass({
             <button onClick={this.props.onProfile}>Profile</button>
             <button onClick={this.props.onLogout}>Logout</button>
           </header>
-          <div>
-            {this.props.children}
-          </div>
+          {this.props.children}
+          <footer>
+            footer needing content
+          </footer>
         </div>
       )
     }
