@@ -11,7 +11,7 @@ export default React.createClass({
     },
     componentWillMount () {
         request
-            .get(`${url}v1/skills/top3`)
+            .get(`${url}/v1/skills/top3`)
             .end((err, res) => {
                 if (err) {
                     return
