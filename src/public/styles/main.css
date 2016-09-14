@@ -1,3 +1,7 @@
+* {
+  box-sizing:border-box;
+}
+
 /* ------------------- STYLIMUS PRIME ----------*/
 
 body {
@@ -85,7 +89,7 @@ header {
 
 .mission-statement {
   height:400px;
-  margin: 0, auto;
+  margin: 0 auto;
   font-family: 'Pacifico', cursive;
   padding-top:5%;
   padding-left:5%;
@@ -106,7 +110,7 @@ login.fields {
   }
 
   .top-videos {
-    background-color:#c2d9e8;
+    background-color:#6ab8ea;
     display:block;
     margin: 0 auto;
     text-align: center;
@@ -119,6 +123,8 @@ login.fields {
   }
 
   .top-videos-heading {
+    text-transform: uppercase;
+    color:white;
     padding-top:40px;
     text-align: center;
   }
@@ -209,8 +215,9 @@ div.Dropdown-placeholder {
 }
 
 .got-it-btn {
+  background-color: #94c394;
   margin: auto;
-  width: 50%;
+  width: 10%;
 }
 
 .skill-video {
