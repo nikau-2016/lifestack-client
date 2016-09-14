@@ -108,3 +108,50 @@ div.Dropdown-placeholder {
   display:block;
   margin:0,auto;
 }
+
+.user-game {
+  display: flex;
+  flex-direction: row;
+  margin: 50px;
+}
+.profile-pic {
+  height: 100px;
+  border: 2px solid black;
+}
+
+.left {
+  height: 100px;
+  position: relative;
+}
+
+.right {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.level {
+  position: absolute;
+  bottom: 0px;
+  right: 10px;
+  font-size: 5rem;
+}
+
+.user-name {
+  border: 2px solid black;
+  margin-bottom: 0;
+}
+
+.levelXp {
+  border: 2px solid black;
+  margin-bottom: 0;
+  height: 30px;
+}
+
+.totalXp {
+  height: 28px;
+  border: 2px solid green;
+  background-color: green;
+  margin-bottom: 0;
+}

@@ -1,5 +1,4 @@
 import React from 'react'
-import UserDetail from './UserDetail'
 import UserGame from './UserGame'
 
 export default React.createClass({
@@ -24,10 +23,10 @@ export default React.createClass({
 
         return (
             <div className="contributor-profile">
-                <UserDetail id={this.props.contributor.id}
+                <UserGame
+                    id={this.props.contributor.id}
                     userrname={this.props.contributor.username}
-                    profile_pic={this.props.contributor.profile_pic} />
-                <UserGame level ={this.props.contributor.level}
+                    profile_pic={this.props.contributor.profile_pic}level ={this.props.contributor.level}
                     totalXp ={this.props.contributor.totalXp}
                     remainingXp ={this.props.contributor.remainingXp} />
                 <table>
