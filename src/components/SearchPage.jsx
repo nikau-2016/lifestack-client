@@ -15,7 +15,7 @@ export default React.createClass({
         onWatchedSkill: React.PropTypes.func.isRequired,
         onUpvote: React.PropTypes.func.isRequired,
         onDownvote: React.PropTypes.func.isRequired,
-        userId: React.PropTypes.number.isRequired,
+        user: React.PropTypes.object.isRequired,
         onLoad: React.PropTypes.func.isRequired,
         error: React.PropTypes.string.isRequired
     },
@@ -47,7 +47,7 @@ export default React.createClass({
           <div className="category">{this.props.skill.category}</div>
           <div className="difficulty">{this.props.skill.difficulty}</div>
           <Tab
-            userId={this.props.userId}
+            user={this.props.user}
             skillId={this.props.skill.id}
             onUpvote={this.props.onUpvote}
             onDownvote={this.props.onDownvote}
