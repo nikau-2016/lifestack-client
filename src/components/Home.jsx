@@ -16,7 +16,7 @@ export default React.createClass({
             <div className="Home row">
                 <div className="error">{this.props.error}</div>
                 <div className="banner row">
-                  <section className="mission-statement four columns"> '"Life skills for millenials". Whether you need to fix, build, create or learn. Lifestack gives you practical solutions to the problems life throws at you.'
+                  <section className="mission-statement four columns"> '"Life skills for millenials". Whether you need to fix, build, create or learn. #adulting gives you practical solutions to the problems life throws at you.'
                   </section>
                 </div>
                 <section className="top-videos row">
